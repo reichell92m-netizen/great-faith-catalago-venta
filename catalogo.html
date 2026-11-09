@@ -84,7 +84,7 @@
                         </div>
                     </div>
 
-                    <!-- PANEL DE EDICIÓN FLOTANTE (ADMIN) - Oculto por defecto con class="hidden" -->
+                    <!-- PANEL DE EDICIÓN FLOTANTE (ADMIN) -->
                     <div id="inlineEditLogoBox" class="hidden absolute top-full left-0 bg-stone-900 border-2 border-gold-500/80 p-4 rounded-xl shadow-2xl mt-2 flex flex-col space-y-3 z-[60] w-72">
                         <div class="flex items-center justify-between border-b border-stone-800 pb-2">
                             <span class="text-gold-400 font-bold text-xs uppercase tracking-wider"><i class="fa-solid fa-lock-open mr-1"></i> Administración</span>
@@ -127,7 +127,7 @@
                     <span id="adminBtnText">Admin</span>
                 </button>
                 
-                <!-- 3, 4, 5, 6, 7, 8. Botones exclusivos de Admin - Ocultos por defecto con class="hidden" para evitar parpadeo -->
+                <!-- 3, 4, 5, 6, 7, 8. Botones exclusivos de Admin -->
                 <div id="adminExclusiveButtons" class="hidden items-center space-x-1.5">
                     <button type="button" onclick="toggleEditLogoInput()" class="w-9 h-9 rounded-xl bg-stone-900 hover:bg-stone-800 border border-stone-700 text-gold-400 flex items-center justify-center text-sm transition-all shadow cursor-pointer" title="Editar Logo">
                         <i class="fa-solid fa-image"></i>
@@ -159,15 +159,15 @@
         </div>
     </header>
 
-    <!-- BANNER MODO ADMIN - Oculto por defecto con class="hidden" -->
-    <div id="adminModeBanner" class="hidden bg-stone-900 border-b border-gold-500/30 py-2 px-4 text-center text-xs text-gold-400 font-bold items-center justify-center space-x-3 flex">
+    <!-- BANNER MODO ADMIN -->
+    <div id="adminModeBanner" class="hidden bg-stone-900 border-b border-gold-500/30 py-2 px-4 text-center text-xs text-gold-400 font-bold items-center justify-center space-x-3">
         <span><i class="fa-solid fa-pen-to-square mr-1"></i> Modo Administrador Activo (Guardado automático en tiempo real)</span>
         <button type="button" onclick="openChangePasswordModal()" class="underline hover:text-stone-100 text-[11px] cursor-pointer">🔑 Cambiar Clave</button>
         <button type="button" onclick="logoutAdmin()" class="bg-red-500/20 text-red-400 px-2 py-0.5 rounded text-[10px] uppercase font-extrabold border border-red-500/30 cursor-pointer">Cerrar Sesión</button>
     </div>
 
     <!-- MAIN CONTENT CONTAINER -->
-    <main class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 py-6 space-y-8 flex-1 w-full">
+    <main class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 py-6 space-y-10 flex-1 w-full">
 
         <!-- HERO / BANNER PRINCIPAL -->
         <section class="relative bg-gradient-to-b from-stone-900/80 to-stone-950 border border-stone-800/80 rounded-3xl p-6 lg:p-14 text-center overflow-hidden shadow-2xl">
@@ -233,7 +233,7 @@
         </section>
 
         <!-- FILTROS DE CATEGORÍA, BÚSQUEDA Y ESTILO -->
-        <div id="catalogo-seccion" class="space-y-3 pt-4 border-t border-stone-800">
+        <div id="catalogo-seccion" class="space-y-3 pt-6 border-t border-stone-800">
             <div class="flex flex-col md:flex-row md:items-end justify-between pb-1 gap-3">
                 <div>
                     <h2 class="text-xl sm:text-3xl font-extrabold tracking-tight text-stone-100">Catálogo de Prendas</h2>
@@ -244,7 +244,7 @@
                     <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-gold-400">
                         <i class="fa-solid fa-magnifying-glass text-sm"></i>
                     </span>
-                    <input type="text" id="searchInput" oninput="renderProducts()" placeholder="Buscar prenda exacta..." class="w-full bg-stone-900 border border-stone-700 rounded-xl pl-10 pr-4 py-2 text-xs text-stone-100 placeholder-stone-500 focus:outline-none focus:border-gold-500 shadow-inner">
+                    <input type="text" id="searchInput" oninput="renderProducts()" placeholder="Buscar prenda exacta..." class="w-full bg-stone-900 border border-stone-700 rounded-xl pl-10 pr-4 py-2.5 text-xs text-stone-100 placeholder-stone-500 focus:outline-none focus:border-gold-500 shadow-inner">
                 </div>
             </div>
 
@@ -264,12 +264,12 @@
             </div>
         </div>
 
-        <!-- GRID DE PRODUCTOS EN 2 COLUMNAS CON MÁS ESPACIO Y TAMAÑO -->
+        <!-- GRID DE PRODUCTOS -->
         <div id="productsGrid" class="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
             <!-- Se inyecta automáticamente mediante JavaScript -->
         </div>
 
-        <!-- BOTÓN AGREGAR NUEVO PRODUCTO (SOLO ADMIN) - Oculto por defecto con class="hidden" -->
+        <!-- BOTÓN AGREGAR NUEVO PRODUCTO (SOLO ADMIN) -->
         <div id="adminAddProductBtnContainer" class="hidden">
             <button type="button" onclick="addNewProduct()" class="w-full py-4 bg-stone-900 border-2 border-dashed border-gold-500/50 hover:bg-stone-800 text-[#EAD8B1] font-extrabold rounded-2xl text-xs uppercase tracking-wider flex items-center justify-center space-x-2 transition-all cursor-pointer shadow">
                 <i class="fa-solid fa-circle-plus text-lg"></i>
@@ -277,9 +277,9 @@
             </button>
         </div>
 
-        <!-- SECCIÓN DE PAGOS Y BANCOS ORDENADA Y BIEN ESPACIADA -->
-        <section class="mt-16 pt-10 border-t border-stone-800 space-y-8 text-center">
-            <div class="space-y-1.5">
+        <!-- SECCIÓN DE PAGOS Y BANCOS -->
+        <section class="mt-20 pt-12 border-t border-stone-800 space-y-10 text-center">
+            <div class="space-y-2">
                 <p class="font-extrabold text-gold-400 text-lg md:text-2xl tracking-wide italic">
                     "Gracias por hacernos parte de tu estilo"
                 </p>
@@ -288,17 +288,17 @@
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left text-xs text-stone-400 bg-stone-900 border border-stone-800 p-6 sm:p-8 rounded-3xl shadow-2xl">
                 <!-- PAGO MÓVIL -->
-                <div class="space-y-3.5">
-                    <h5 class="font-extrabold text-stone-200 uppercase tracking-wider flex items-center text-gold-400 border-b border-stone-800 pb-2.5 text-sm">
+                <div class="space-y-4">
+                    <h5 class="font-extrabold text-stone-200 uppercase tracking-wider flex items-center text-gold-400 border-b border-stone-800 pb-3 text-sm">
                         <i class="fa-solid fa-mobile-screen-button mr-2.5 text-base"></i> Pago Móvil
                     </h5>
-                    <div class="p-3 bg-stone-950 rounded-2xl border border-stone-800/80 space-y-1 shadow-inner">
+                    <div class="p-3.5 bg-stone-950 rounded-2xl border border-stone-800/80 space-y-1.5 shadow-inner">
                         <p class="text-[11px] text-gold-400 font-bold uppercase">Opción 1:</p>
                         <p><strong class="text-stone-300">Banco:</strong> <span id="pm1_banco">Banco de Venezuela</span></p>
                         <p><strong class="text-stone-300">Cédula / RIF:</strong> <span id="pm1_rif">V-22392865</span></p>
                         <p><strong class="text-stone-300">Teléfono:</strong> <span id="pm1_tlf">0414-1539044</span></p>
                     </div>
-                    <div class="p-3 bg-stone-950 rounded-2xl border border-stone-800/80 space-y-1 shadow-inner">
+                    <div class="p-3.5 bg-stone-950 rounded-2xl border border-stone-800/80 space-y-1.5 shadow-inner">
                         <p class="text-[11px] text-gold-400 font-bold uppercase">Opción 2:</p>
                         <p><strong class="text-stone-300">Banco:</strong> <span id="pm2_banco">Bancamiga</span></p>
                         <p><strong class="text-stone-300">Cédula / RIF:</strong> <span id="pm2_rif">V-22392865</span></p>
@@ -307,17 +307,17 @@
                 </div>
 
                 <!-- TRANSFERENCIA BANCARIA -->
-                <div class="space-y-3.5">
-                    <h5 class="font-extrabold text-stone-200 uppercase tracking-wider flex items-center text-gold-400 border-b border-stone-800 pb-2.5 text-sm">
+                <div class="space-y-4">
+                    <h5 class="font-extrabold text-stone-200 uppercase tracking-wider flex items-center text-gold-400 border-b border-stone-800 pb-3 text-sm">
                         <i class="fa-solid fa-building-columns mr-2.5 text-base"></i> Transferencia Bancaria
                     </h5>
-                    <div class="p-3 bg-stone-950 rounded-2xl border border-stone-800/80 space-y-1 shadow-inner">
+                    <div class="p-3.5 bg-stone-950 rounded-2xl border border-stone-800/80 space-y-1.5 shadow-inner">
                         <p class="text-[11px] text-gold-400 font-bold uppercase">Cuenta 1:</p>
                         <p><strong class="text-stone-300">Banco:</strong> <span id="tb1_banco">Banco de Venezuela</span></p>
                         <p><strong class="text-stone-300">Cuenta:</strong> <span id="tb1_cuenta">0102-0161-6701-0006-9488</span></p>
                         <p><strong class="text-stone-300">Titular:</strong> <span id="tb1_titular">Lenis Torres</span></p>
                     </div>
-                    <div class="p-3 bg-stone-950 rounded-2xl border border-stone-800/80 space-y-1 shadow-inner">
+                    <div class="p-3.5 bg-stone-950 rounded-2xl border border-stone-800/80 space-y-1.5 shadow-inner">
                         <p class="text-[11px] text-gold-400 font-bold uppercase">Cuenta 2:</p>
                         <p><strong class="text-stone-300">Banco:</strong> <span id="tb2_banco">Bancamiga</span></p>
                         <p><strong class="text-stone-300">Cuenta:</strong> <span id="tb2_cuenta">0172-0153-1415-3450-7767</span></p>
@@ -326,16 +326,16 @@
                 </div>
 
                 <!-- PAYPAL & ENVÍOS -->
-                <div class="space-y-3.5">
-                    <h5 class="font-extrabold text-stone-200 uppercase tracking-wider flex items-center text-gold-400 border-b border-stone-800 pb-2.5 text-sm">
+                <div class="space-y-4">
+                    <h5 class="font-extrabold text-stone-200 uppercase tracking-wider flex items-center text-gold-400 border-b border-stone-800 pb-3 text-sm">
                         <i class="fa-brands fa-paypal mr-2.5 text-base"></i> PayPal &amp; Envíos
                     </h5>
-                    <div class="p-3 bg-stone-950 rounded-2xl border border-stone-800/80 space-y-1.5 shadow-inner">
+                    <div class="p-3.5 bg-stone-950 rounded-2xl border border-stone-800/80 space-y-2 shadow-inner">
                         <p class="text-[11px] text-gold-400 font-bold uppercase">Cuenta PayPal:</p>
                         <p><strong class="text-stone-300">Correo:</strong> <span id="paypal_email">reichell.92m@gmail.com</span></p>
                         <p><strong class="text-stone-300">Titular:</strong> <span id="paypal_titular">Lenis Torres</span></p>
                     </div>
-                    <div class="p-3 bg-stone-950 rounded-2xl border border-stone-800/80 space-y-1.5 shadow-inner">
+                    <div class="p-3.5 bg-stone-950 rounded-2xl border border-stone-800/80 space-y-2 shadow-inner">
                         <p><strong class="text-stone-300">Envíos Nacionales:</strong> MRW, ZOOM, TEALCA</p>
                         <p><strong class="text-stone-300">Horario:</strong> Lun a Sáb 8:00 AM - 6:00 PM</p>
                         <p><strong class="text-stone-300">Atención Directa:</strong> WhatsApp 24/7</p>
@@ -343,16 +343,16 @@
                 </div>
             </div>
 
-            <!-- BOTÓN EDITAR CUENTAS (SOLO ADMIN) - Oculto por defecto -->
-            <div id="adminEditAccountsContainer" class="hidden pt-2">
+            <!-- BOTÓN EDITAR CUENTAS (SOLO ADMIN) -->
+            <div id="adminEditAccountsContainer" class="hidden pt-3">
                 <button type="button" onclick="openEditAccountsModal()" class="px-6 py-3 bg-[#EAD8B1] hover:bg-[#d8c49e] text-stone-950 font-extrabold rounded-xl text-xs uppercase tracking-wider shadow-lg transition-all cursor-pointer">
                     <i class="fa-solid fa-pen-to-square mr-2"></i> Editar Cuentas de Pago
                 </button>
             </div>
         </section>
 
-        <!-- PIE DE PÁGINA LIMPIO Y ORGANIZADO -->
-        <footer class="mt-12 pt-8 pb-6 border-t border-stone-800 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-stone-400 text-xs">
+        <!-- PIE DE PÁGINA -->
+        <footer class="mt-16 pt-10 pb-8 border-t border-stone-800 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-stone-400 text-xs">
             <div class="space-y-3">
                 <h4 class="font-black text-stone-100 uppercase tracking-wider text-sm">GREAT FAITH</h4>
                 <p class="text-stone-400 text-xs leading-relaxed">Moda &amp; Estiló urbano con estándares superiores de calidad. Telas importadas y nacionales.</p>
@@ -586,7 +586,7 @@
     </div>
 
     <!-- TOAST NOTIFICACIONES -->
-    <div id="toast" class="fixed bottom-5 right-5 z-[120] transform transition-all duration-300 bg-[#EAD8B1] border-2 border-stone-900 text-stone-950 px-5 py-3 rounded-2xl font-extrabold text-xs shadow-2xl flex items-center space-x-3 translate-y-20 opacity-0">
+    <div id="toast" class="fixed bottom-5 right-5 z-[120] transform transition-all duration-300 bg-[#EAD8B1] border-2 border-stone-900 text-stone-950 px-5 py-3 rounded-2xl font-extrabold text-xs shadow-2xl flex items-center space-x-3 translate-y-20 opacity-0 pointer-events-none">
         <i class="fa-solid fa-circle-check text-lg text-stone-950"></i>
         <span id="toastMsg">¡Cambios guardados con éxito!</span>
     </div>
@@ -640,7 +640,7 @@
 
         let PRODUCTS = JSON.parse(JSON.stringify(DEFAULT_PRODUCTS));
         let eurRate = 1004.96;
-        let isAdmin = false;
+        let isAdmin = false; 
         let adminPassword = "Jeythi0913.";
         let activeType = 'todos'; 
         let activeAudience = 'todos'; 
@@ -800,7 +800,7 @@
             });
         }
 
-     function renderProducts() {
+        function renderProducts() {
             const container = document.getElementById('productsGrid');
             if (!container) return;
             container.innerHTML = '';
@@ -857,7 +857,7 @@
                     </button>
                 ` : '';
 
-let adminEditHtml = '';
+                let adminEditHtml = '';
                 if (isAdmin) {
                     let sizesGridHtml = p.sizes.map((s, idx) => `
                         <div class="flex items-center space-x-1 bg-stone-950 p-1.5 rounded-xl border border-stone-800">
@@ -885,7 +885,7 @@ let adminEditHtml = '';
                         <div class="p-3 bg-stone-950/95 border-b border-stone-800 space-y-3 text-xs">
                             <div class="flex justify-between items-center border-b border-stone-800 pb-2">
                                 <span class="text-gold-400 font-extrabold uppercase tracking-wider text-[11px]"><i class="fa-solid fa-user-shield mr-1"></i> Admin Prenda</span>
-                              <span class="bg-stone-900 border border-gold-500/50 text-gold-400 font-black px-3 py-1 rounded-xl text-sm tracking-wide">TOTAL: ${totalStock} u.</span>
+                                <span class="bg-stone-900 border border-gold-500/50 text-gold-400 font-black px-3 py-1 rounded-xl text-sm tracking-wide">TOTAL: ${totalStock} u.</span>
                             </div>
                             
                             <div class="space-y-1.5">
@@ -923,11 +923,11 @@ let adminEditHtml = '';
                 }
 
                 let stockDisplayHtml = `
-    <div class="mt-3 mx-3 px-3.5 py-2.5 bg-stone-950 border border-stone-800 rounded-xl flex items-center justify-between text-sm shadow-inner">
-        <span class="text-stone-300 font-medium text-xs">Existencia Total:</span>
-        <span class="text-gold-400 font-black text-sm">${totalStock} unids</span>
-    </div>
-`;
+                    <div class="mt-3 mx-3 px-3.5 py-2.5 bg-stone-950 border border-stone-800 rounded-xl flex items-center justify-between text-sm shadow-inner">
+                        <span class="text-stone-300 font-medium text-xs">Existencia Total:</span>
+                        <span class="text-gold-400 font-black text-sm">${totalStock} unids</span>
+                    </div>
+                `;
 
                 let titleHtml = isAdmin ? `
                     <input type="text" value="${p.name}" onchange="updateProductName('${p.id}', this.value)" class="w-full bg-stone-950 border border-gold-500/60 text-stone-100 font-bold text-xs sm:text-sm px-2.5 py-1.5 rounded-xl">
@@ -999,10 +999,10 @@ let adminEditHtml = '';
                                     <select id="select-color-${p.id}" class="w-full bg-stone-950 border border-stone-800 rounded-xl text-xs py-2 px-2.5 text-stone-200">${selectColorsOptions}</select>
                                 </div>
                             </div>
-                           <button type="button" onclick="addToCart('${p.id}')" class="w-full py-3 bg-[#EAD8B1] hover:bg-[#d8c49e] text-stone-950 font-black rounded-xl text-xs sm:text-sm uppercase tracking-wider transition-all shadow-md flex items-center justify-center space-x-2 cursor-pointer">
-    <i class="fa-solid fa-cart-shopping text-sm"></i>
-    <span>Agregar al Carrito</span>
-</button>
+                            <button type="button" onclick="addToCart('${p.id}')" class="w-full py-3 bg-[#EAD8B1] hover:bg-[#d8c49e] text-stone-950 font-black rounded-xl text-xs sm:text-sm uppercase tracking-wider transition-all shadow-md flex items-center justify-center space-x-2 cursor-pointer">
+                                <i class="fa-solid fa-cart-shopping text-sm"></i>
+                                <span>Agregar al Carrito</span>
+                            </button>
                         </div>
                     </div>
                 `;
@@ -1053,6 +1053,28 @@ let adminEditHtml = '';
                 }
             } else {
                 showToast("Por favor ingresa una URL válida");
+            }
+        }
+
+        function addSizeToProduct(productId) {
+            const p = PRODUCTS.find(prod => prod.id === productId);
+            if (p) {
+                if (!p.sizes) p.sizes = [];
+                p.sizes.push({ name: "Única", quantity: 5 });
+                saveCatalogData();
+                renderProducts();
+                showToast("Talla agregada");
+            }
+        }
+
+        function addColorToProduct(productId) {
+            const p = PRODUCTS.find(prod => prod.id === productId);
+            if (p) {
+                if (!p.colors) p.colors = [];
+                p.colors.push({ name: "Estándar", quantity: 5 });
+                saveCatalogData();
+                renderProducts();
+                showToast("Color agregado");
             }
         }
 
