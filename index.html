@@ -116,13 +116,13 @@
             </div>
 
             <div class="flex flex-wrap gap-1.5 px-3 py-2 bg-stone-900 border border-stone-800 rounded-xl justify-center shadow-lg">
-                <button type="button" onclick="filterType('todos', this)" class="type-btn px-3.5 py-2 bg-[#EAD8B1] text-stone-950 font-extrabold text-xs rounded-full shadow-md transition-all cursor-pointer">Ver Todos</button>
+                <button type="button" onclick="filterType('todos', this)" class="type-btn px-3.5 py-2 bg-stone-950 text-stone-400 font-bold text-xs rounded-full border border-stone-800 hover:border-gold-500/50 hover:text-gold-400 transition-all cursor-pointer">Ver Todos</button>
                 <button type="button" onclick="filterType('confeccion', this)" class="type-btn px-3.5 py-2 bg-stone-950 text-stone-400 font-bold text-xs rounded-full border border-stone-800 hover:border-gold-500/50 hover:text-gold-400 transition-all cursor-pointer">🧵 Confección</button>
                 <button type="button" onclick="filterType('sublimacion', this)" class="type-btn px-3.5 py-2 bg-stone-950 text-stone-400 font-bold text-xs rounded-full border border-stone-800 hover:border-gold-500/50 hover:text-gold-400 transition-all cursor-pointer">✨ Sublimados</button>
             </div>
 
             <div class="flex flex-wrap gap-1.5 px-3 py-2 bg-stone-950 border border-stone-800 rounded-xl justify-center shadow-lg">
-                <button type="button" onclick="filterAudience('todos', this)" class="aud-btn px-3.5 py-2 bg-[#EAD8B1] text-stone-950 font-extrabold text-xs rounded-full shadow-md transition-all cursor-pointer">✨ Todo Público</button>
+                <button type="button" onclick="filterAudience('todos', this)" class="aud-btn px-3.5 py-2 bg-stone-950 text-stone-400 font-bold text-xs rounded-full border border-stone-800 hover:border-gold-500/50 hover:text-gold-400 transition-all cursor-pointer">✨ Todo Público</button>
                 <button type="button" onclick="filterAudience('damas', this)" class="aud-btn px-3.5 py-2 bg-stone-950 text-stone-400 font-bold text-xs rounded-full border border-stone-800 hover:border-gold-500/50 hover:text-gold-400 transition-all cursor-pointer">👗 Damas</button>
                 <button type="button" onclick="filterAudience('caballeros', this)" class="aud-btn px-3.5 py-2 bg-stone-950 text-stone-400 font-bold text-xs rounded-full border border-stone-800 hover:border-gold-500/50 hover:text-gold-400 transition-all cursor-pointer">👔 Caballeros</button>
                 <button type="button" onclick="filterAudience('ninos', this)" class="aud-btn px-3.5 py-2 bg-stone-950 text-stone-400 font-bold text-xs rounded-full border border-stone-800 hover:border-gold-500/50 hover:text-gold-400 transition-all cursor-pointer">🧒 Niños</button>
@@ -279,7 +279,6 @@
                 }
                 if (activeType === 'sublimacion' && p.tipo !== 'sublimacion') return false;
                 if (activeType === 'confeccion' && p.tipo !== 'confeccion') return false;
-                if (activeType === 'todos' && p.tipo === 'sublimacion') return false;
                 if (activeAudience !== 'todos' && p.category !== activeAudience) return false;
                 return true;
             });
@@ -362,6 +361,21 @@
             buttons.forEach(btn => btn.className = "aud-btn px-3.5 py-2 bg-stone-950 text-stone-400 font-bold text-xs rounded-full border border-stone-800 hover:border-gold-500/50 hover:text-gold-400 transition-all cursor-pointer");
             element.className = "aud-btn px-3.5 py-2 bg-[#EAD8B1] text-stone-950 font-extrabold text-xs rounded-full shadow-md transition-all cursor-pointer";
             renderProducts();
+        }
+
+        function initButtonStyles() {
+            const typeBtns = document.querySelectorAll('.type-btn');
+            typeBtns.forEach(btn => {
+                if (btn.getAttribute('onclick').includes(`'${activeType}'`)) {
+                    btn.className = "type-btn px-3.5 py-2 bg-[#EAD8B1] text-stone-950 font-extrabold text-xs rounded-full shadow-md transition-all cursor-pointer";
+                }
+            });
+            const audBtns = document.querySelectorAll('.aud-btn');
+            audBtns.forEach(btn => {
+                if (btn.getAttribute('onclick').includes(`'${activeAudience}'`)) {
+                    btn.className = "aud-btn px-3.5 py-2 bg-[#EAD8B1] text-stone-950 font-extrabold text-xs rounded-full shadow-md transition-all cursor-pointer";
+                }
+            });
         }
 
         function addToCart(productId) {
@@ -459,6 +473,7 @@
         }
 
         window.onload = function() {
+            initButtonStyles();
             renderProducts();
             updateCartSummary();
             fetchAutoExchangeRate(false);
