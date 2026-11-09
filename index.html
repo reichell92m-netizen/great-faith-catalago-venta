@@ -1,40 +1,23 @@
 <!DOCTYPE html>
 <html lang="es" class="h-full bg-stone-950 text-stone-100">
 <head>
-  <!-- 1. Codificación y Viewport optimizado -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Great Faith | Moda &amp; Estilo - Catálogo Oficial</title>
-
-  <!-- 2. Configuración Web App Mobile -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#09090b">
-
-  <!-- 3. Fuentes e Iconos Externos -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- 4. Estilos Personalizados -->
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    html, body {
-      width: 100% !important;
-      max-width: 100% !important;
-      margin: 0 !important;
-      padding: 0 !important;
-      overflow-x: hidden !important;
-    }
+    html { scroll-behavior: smooth; }
+    html, body { width: 100% !important; max-width: 100% !important; margin: 0 !important; padding: 0 !important; overflow-x: hidden !important; }
     ::-webkit-scrollbar { width: 6px; height: 6px; }
     ::-webkit-scrollbar-track { background: #1c1917; }
     ::-webkit-scrollbar-thumb { background: #44403c; border-radius: 3px; }
     ::-webkit-scrollbar-thumb:hover { background: #C5A059; }
   </style>
-
-  <!-- 5. Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
   <script>
     window.tailwind = window.tailwind || {};
@@ -43,11 +26,7 @@
         extend: {
           colors: {
             brand: { accent: '#D4AF37' },
-            gold: {
-              400: '#D4AF37',
-              500: '#C5A059',
-              600: '#A37F38',
-            }
+            gold: { 400: '#D4AF37', 500: '#C5A059', 600: '#A37F38' }
           },
           fontFamily: { sans: ['Inter', 'sans-serif'] }
         }
@@ -57,61 +36,25 @@
 </head>
 <body class="h-full flex flex-col font-sans bg-stone-950 text-stone-200 antialiased selection:bg-gold-500 selection:text-black">
 
-    <!-- Top Announcement Bar -->
     <div class="bg-stone-900 text-zinc-100 text-xs sm:text-sm py-2 px-4 text-center font-medium tracking-wide border-b border-stone-800">
         <span>🔥 Envíos nacionales seguros &bull; Pedidos directos por WhatsApp al <strong class="text-gold-400">0414-1539044</strong></span>
     </div>
 
-    <!-- HEADER UNIFICADO -->
     <header class="bg-stone-900/90 backdrop-blur-md border-b border-stone-800 py-3 px-4 lg:px-8 sticky top-0 z-40 shadow-xl">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
-            
-            <!-- LOGO Y TÍTULOS -->
             <div class="flex items-center space-x-3 relative w-full md:w-auto justify-between md:justify-start">
                 <div class="flex items-center space-x-3">
                     <div id="logoContainer" class="flex items-center justify-center">
                         <img id="customLogoImage" src="https://github.com/reichell92m-netizen/great-faith-catalago-venta/blob/main/image_a.png?raw=true" alt="Logo Great Faith" class="h-10 w-auto max-w-[120px] sm:max-w-[140px] object-contain rounded-lg block">
-                        <div id="defaultLogoBadge" class="w-10 h-10 rounded-full bg-stone-950 border-2 border-gold-500 items-center justify-center shadow-md shadow-gold-500/20 hidden">
-                            <span class="font-extrabold text-gold-400 text-xl tracking-tighter">GF</span>
-                        </div>
                     </div>  
                     <div>
-                        <div class="flex items-center space-x-2">
-                            <h1 id="storeTitleText" class="font-black tracking-wider text-stone-100 text-sm sm:text-lg uppercase leading-none">GREAT FAITH</h1>
-                        </div>
-                        <div class="flex items-center space-x-2 mt-0.5">
-                            <p id="storeSubtitleText" class="text-[9px] sm:text-[10px] text-gold-400 font-semibold tracking-widest uppercase">Moda &amp; Estilo • Catálogo Oficial</p>
-                        </div>
-                    </div>
-
-                    <!-- PANEL DE EDICIÓN FLOTANTE (ADMIN) -->
-                    <div id="inlineEditLogoBox" class="hidden absolute top-full left-0 bg-stone-900 border-2 border-gold-500/80 p-4 rounded-xl shadow-2xl mt-2 flex flex-col space-y-3 z-[60] w-72">
-                        <div class="flex items-center justify-between border-b border-stone-800 pb-2">
-                            <span class="text-gold-400 font-bold text-xs uppercase tracking-wider"><i class="fa-solid fa-lock-open mr-1"></i> Administración</span>
-                            <button type="button" onclick="toggleEditLogoInput()" class="text-stone-400 hover:text-stone-100 text-xs font-bold cursor-pointer">✕</button>
-                        </div>
-                        <div class="space-y-2">
-                            <div>
-                                <label class="text-[9px] text-stone-400 uppercase font-semibold">URL del Logo</label>
-                                <input type="text" id="logoUrlInput" class="bg-stone-950 border border-gold-500/50 rounded text-stone-200 text-[10px] px-2 py-1.5 w-full focus:outline-none" value="https://github.com/reichell92m-netizen/great-faith-catalago-venta/blob/main/image_a.png?raw=true">
-                            </div>
-                            <div>
-                                <label class="text-[9px] text-stone-400 uppercase font-semibold">Título de la Tienda</label>
-                                <input type="text" id="storeTitleInput" class="bg-stone-950 border border-gold-500/50 rounded text-stone-200 text-[10px] px-2 py-1.5 w-full focus:outline-none" value="GREAT FAITH">
-                            </div>
-                            <div>
-                                <label class="text-[9px] text-stone-400 uppercase font-semibold">Subtítulo</label>
-                                <input type="text" id="storeSubtitleInput" class="bg-stone-950 border border-gold-500/50 rounded text-stone-200 text-[10px] px-2 py-1.5 w-full focus:outline-none" value="Moda & Estilo • Catálogo Oficial">
-                            </div>
-                        </div>
-                        <button type="button" onclick="saveCustomLogoAndName()" class="w-full bg-[#EAD8B1] hover:bg-[#d8c49e] text-stone-950 font-black text-[10px] py-1.5 rounded transition-colors shadow cursor-pointer">Guardar Cambios</button>
+                        <h1 id="storeTitleText" class="font-black tracking-wider text-stone-100 text-sm sm:text-lg uppercase leading-none">GREAT FAITH</h1>
+                        <p id="storeSubtitleText" class="text-[9px] sm:text-[10px] text-gold-400 font-semibold tracking-widest uppercase mt-0.5">Moda &amp; Estilo • Catálogo Oficial</p>
                     </div>
                 </div>
             </div>
 
-            <!-- CONTROLES SUPERIORES -->
             <div class="flex items-center flex-wrap justify-center md:justify-end gap-2 w-full md:w-auto">
-                <!-- 1. Tasa EUR -->
                 <div class="flex items-center text-xs bg-stone-950/60 px-2.5 py-1.5 rounded-lg border border-stone-800">
                     <span class="text-stone-400 text-[10px] mr-1">EUR:</span>
                     <span class="font-bold text-gold-400 mr-1">Bs.</span>
@@ -121,35 +64,17 @@
                     </button>
                 </div>
 
-                <!-- 2. Admin -->
                 <button type="button" id="btnAdminModal" onclick="toggleAdminAuthModal()" class="px-2.5 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 border border-stone-700 text-stone-300 text-xs font-bold transition-all flex items-center space-x-1.5 cursor-pointer">
                     <i class="fa-solid fa-user-shield text-gold-400"></i>
                     <span id="adminBtnText">Admin</span>
                 </button>
                 
-                <!-- 3, 4, 5, 6, 7, 8. Botones exclusivos de Admin -->
                 <div id="adminExclusiveButtons" class="hidden items-center space-x-1.5">
-                    <button type="button" onclick="toggleEditLogoInput()" class="w-9 h-9 rounded-xl bg-stone-900 hover:bg-stone-800 border border-stone-700 text-gold-400 flex items-center justify-center text-sm transition-all shadow cursor-pointer" title="Editar Logo">
-                        <i class="fa-solid fa-image"></i>
-                    </button>
-                    <button type="button" onclick="toggleEditLogoInput()" class="w-9 h-9 rounded-xl bg-stone-900 hover:bg-stone-800 border border-stone-700 text-gold-400 flex items-center justify-center text-sm transition-all shadow cursor-pointer" title="Editar Textos">
-                        <i class="fa-solid fa-pen-to-square"></i>
-                    </button>
-                    <button type="button" onclick="saveCatalogDataPermanent()" class="w-9 h-9 rounded-xl bg-[#EAD8B1] hover:bg-[#d8c49e] text-stone-950 flex items-center justify-center text-sm transition-all shadow font-bold cursor-pointer" title="Guardar permanente y en nube">
+                    <button type="button" onclick="saveCatalogDataPermanent()" class="w-9 h-9 rounded-xl bg-[#EAD8B1] hover:bg-[#d8c49e] text-stone-950 flex items-center justify-center text-sm transition-all shadow font-bold cursor-pointer" title="Guardar permanente">
                         <i class="fa-solid fa-floppy-disk"></i>
-                    </button>
-                    <button type="button" onclick="syncCloudProducts(true)" class="w-9 h-9 rounded-xl bg-[#EAD8B1] hover:bg-[#d8c49e] text-stone-950 flex items-center justify-center text-sm transition-all shadow font-bold cursor-pointer" title="Actualizar desde la nube">
-                        <i class="fa-solid fa-arrows-rotate"></i>
-                    </button>
-                    <button type="button" onclick="openShareAppModal()" class="w-9 h-9 rounded-xl bg-stone-900 hover:bg-stone-800 border border-stone-700 text-gold-400 flex items-center justify-center text-sm transition-all shadow cursor-pointer" title="Compartir Catálogo">
-                        <i class="fa-solid fa-share-nodes"></i>
-                    </button>
-                    <button type="button" onclick="openCodeModal()" class="w-9 h-9 rounded-xl bg-stone-900 hover:bg-stone-800 border border-stone-700 text-gold-400 flex items-center justify-center text-sm transition-all shadow cursor-pointer" title="Ver y copiar código para GitHub">
-                        <i class="fa-solid fa-code"></i>
                     </button>
                 </div>
 
-                <!-- 9. Carrito -->
                 <button type="button" onclick="toggleCartDrawer()" class="relative px-3.5 py-1.5 rounded-lg bg-[#EAD8B1] hover:bg-[#d8c49e] text-stone-950 font-extrabold text-xs transition-all flex items-center space-x-2 shadow-lg cursor-pointer">
                     <i class="fa-solid fa-cart-shopping text-sm"></i>
                     <span>Carrito</span>
@@ -159,19 +84,13 @@
         </div>
     </header>
 
-    <!-- BANNER MODO ADMIN -->
     <div id="adminModeBanner" class="hidden bg-stone-900 border-b border-gold-500/30 py-2 px-4 text-center text-xs text-gold-400 font-bold items-center justify-center space-x-3">
-        <span><i class="fa-solid fa-pen-to-square mr-1"></i> Modo Administrador Activo (Guardado automático en tiempo real)</span>
-        <button type="button" onclick="openChangePasswordModal()" class="underline hover:text-stone-100 text-[11px] cursor-pointer">🔑 Cambiar Clave</button>
+        <span><i class="fa-solid fa-pen-to-square mr-1"></i> Modo Administrador Activo</span>
         <button type="button" onclick="logoutAdmin()" class="bg-red-500/20 text-red-400 px-2 py-0.5 rounded text-[10px] uppercase font-extrabold border border-red-500/30 cursor-pointer">Cerrar Sesión</button>
     </div>
 
-    <!-- MAIN CONTENT CONTAINER -->
     <main class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 py-6 space-y-10 flex-1 w-full">
-
-        <!-- HERO / BANNER PRINCIPAL -->
         <section class="relative bg-gradient-to-b from-stone-900/80 to-stone-950 border border-stone-800/80 rounded-3xl p-6 lg:p-14 text-center overflow-hidden shadow-2xl">
-            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:16px_16px]"></div>
             <div class="relative z-10 max-w-3xl mx-auto space-y-4">
                 <div class="inline-block bg-stone-900 border border-gold-500/40 text-gold-400 text-xs font-extrabold uppercase px-4 py-1.5 rounded-full tracking-widest shadow">
                     Colección Exclusiva 2026
@@ -180,59 +99,11 @@
                     Viste con Propósito, <br><span class="text-gold-400">Estilo &amp; Calidad Superior</span>
                 </h2>
                 <p class="text-stone-400 text-xs sm:text-base leading-relaxed max-w-2xl mx-auto">
-                    Prendas confeccionadas con telas de alto rendimiento como Micro Durazno Heavy, Terry Spum y Algodón Jersey 20/1. Diseñadas para ofrecer máximo confort urbano y durabilidad excepcional.
+                    Prendas confeccionadas con telas de alto rendimiento. Diseñadas para ofrecer máximo confort urbano.
                 </p>
-                <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
-                    <a href="#catalogo-seccion" class="px-5 py-3 bg-[#EAD8B1] hover:bg-[#d8c49e] text-stone-950 font-black text-xs uppercase tracking-wider rounded-xl shadow-lg transition-all flex items-center space-x-2">
-                        <i class="fa-solid fa-shirt"></i>
-                        <span>Ver Catálogo Completo</span>
-                    </a>
-                    <a href="https://api.whatsapp.com/send?phone=584141539044&text=Hola,%20deseo%20contactar%20con%20un%20asesor%20de%20Great%20Faith." target="_blank" class="px-5 py-3 bg-stone-900 hover:bg-stone-800 border border-stone-700 text-stone-200 font-bold text-xs uppercase tracking-wider rounded-xl transition-all flex items-center space-x-2">
-                        <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i>
-                        <span>Contactar Asesor</span>
-                    </a>
-                </div>
             </div>
         </section>
 
-        <!-- SECCIÓN INFORMATIVA -->
-        <section class="space-y-6 py-2">
-            <div class="text-center space-y-1">
-                <h3 class="text-xl sm:text-3xl font-black tracking-tight text-stone-100">¿Por qué elegir Great Faith?</h3>
-                <p class="text-stone-400 text-xs sm:text-sm max-w-xl mx-auto">Combinamos excelencia textil con diseño contemporáneo para ofrecerte piezas que perduran.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="bg-stone-900/90 border border-stone-800 p-5 rounded-2xl shadow-xl space-y-2 text-center flex flex-col items-center justify-between">
-                    <div class="w-10 h-10 rounded-xl bg-stone-950 border border-gold-500/30 flex items-center justify-center text-gold-400 text-lg shadow">
-                        <i class="fa-solid fa-shirt"></i>
-                    </div>
-                    <div class="space-y-1">
-                        <h4 class="font-bold text-stone-100 text-xs sm:text-sm uppercase tracking-wider">Micro Durazno Heavy</h4>
-                        <p class="text-[11px] text-stone-400 leading-relaxed">Texturas densas, suaves al tacto y con gran retención térmica y durabilidad superior.</p>
-                    </div>
-                </div>
-                <div class="bg-stone-900/90 border border-stone-800 p-5 rounded-2xl shadow-xl space-y-2 text-center flex flex-col items-center justify-between">
-                    <div class="w-10 h-10 rounded-xl bg-stone-950 border border-gold-500/30 flex items-center justify-center text-gold-400 text-lg shadow">
-                        <i class="fa-solid fa-bolt"></i>
-                    </div>
-                    <div class="space-y-1">
-                        <h4 class="font-bold text-stone-100 text-xs sm:text-sm uppercase tracking-wider">Tecnología Terry Spum &amp; Algodón Jersey 20/1</h4>
-                        <p class="text-[11px] text-stone-400 leading-relaxed">Elásticos naturales, máxima transpirabilidad y confort absoluto para uso diario o deportivo.</p>
-                    </div>
-                </div>
-                <div class="bg-stone-900/90 border border-stone-800 p-5 rounded-2xl shadow-xl space-y-2 text-center flex flex-col items-center justify-between">
-                    <div class="w-10 h-10 rounded-xl bg-stone-950 border border-gold-500/30 flex items-center justify-center text-gold-400 text-lg shadow">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <div class="space-y-1">
-                        <h4 class="font-bold text-stone-100 text-xs sm:text-sm uppercase tracking-wider">Confección Garantizada</h4>
-                        <p class="text-[11px] text-stone-400 leading-relaxed">Acabados de alta costura, costuras reforzadas y hormas diseñadas para ajuste perfecto.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FILTROS DE CATEGORÍA, BÚSQUEDA Y ESTILO -->
         <div id="catalogo-seccion" class="space-y-3 pt-6 border-t border-stone-800">
             <div class="flex flex-col md:flex-row md:items-end justify-between pb-1 gap-3">
                 <div>
@@ -248,14 +119,12 @@
                 </div>
             </div>
 
-            <!-- BARRA SUPERIOR DE TIPOS -->
             <div class="flex flex-wrap gap-1.5 px-3 py-2 bg-stone-900 border border-stone-800 rounded-xl justify-center shadow-lg">
                 <button type="button" onclick="filterType('todos', this)" class="type-btn px-3.5 py-2 bg-stone-950 text-stone-400 font-bold text-xs rounded-full border border-stone-800 hover:border-gold-500/50 hover:text-gold-400 transition-all cursor-pointer">Ver Todos</button>
                 <button type="button" onclick="filterType('confeccion', this)" class="type-btn px-3.5 py-2 bg-stone-950 text-stone-400 font-bold text-xs rounded-full border border-stone-800 hover:border-gold-500/50 hover:text-gold-400 transition-all cursor-pointer">🧵 Confección</button>
                 <button type="button" onclick="filterType('sublimacion', this)" class="type-btn px-3.5 py-2 bg-stone-950 text-stone-400 font-bold text-xs rounded-full border border-stone-800 hover:border-gold-500/50 hover:text-gold-400 transition-all cursor-pointer">✨ Sublimados</button>
             </div>
 
-            <!-- BARRA INFERIOR DE PÚBLICO -->
             <div class="flex flex-wrap gap-1.5 px-3 py-2 bg-stone-950 border border-stone-800 rounded-xl justify-center shadow-lg">
                 <button type="button" onclick="filterAudience('todos', this)" class="aud-btn px-3.5 py-2 bg-stone-950 text-stone-400 font-bold text-xs rounded-full border border-stone-800 hover:border-gold-500/50 hover:text-gold-400 transition-all cursor-pointer">✨ Todo Público</button>
                 <button type="button" onclick="filterAudience('damas', this)" class="aud-btn px-3.5 py-2 bg-stone-950 text-stone-400 font-bold text-xs rounded-full border border-stone-800 hover:border-gold-500/50 hover:text-gold-400 transition-all cursor-pointer">👗 Damas</button>
@@ -264,227 +133,16 @@
             </div>
         </div>
 
-        <!-- GRID DE PRODUCTOS -->
-        <div id="productsGrid" class="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
-            <!-- Se inyecta automáticamente mediante JavaScript -->
-        </div>
+        <div id="productsGrid" class="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6"></div>
 
-        <!-- BOTÓN AGREGAR NUEVO PRODUCTO (SOLO ADMIN) -->
         <div id="adminAddProductBtnContainer" class="hidden">
             <button type="button" onclick="addNewProduct()" class="w-full py-4 bg-stone-900 border-2 border-dashed border-gold-500/50 hover:bg-stone-800 text-[#EAD8B1] font-extrabold rounded-2xl text-xs uppercase tracking-wider flex items-center justify-center space-x-2 transition-all cursor-pointer shadow">
                 <i class="fa-solid fa-circle-plus text-lg"></i>
                 <span>Agregar Nueva Prenda al Catálogo</span>
             </button>
         </div>
-
-        <!-- SECCIÓN DE PAGOS Y BANCOS -->
-        <section class="mt-20 pt-12 border-t border-stone-800 space-y-10 text-center">
-            <div class="space-y-2">
-                <p class="font-extrabold text-gold-400 text-lg md:text-2xl tracking-wide italic">
-                    "Gracias por hacernos parte de tu estilo"
-                </p>
-                <p class="text-xs text-stone-400 uppercase tracking-widest font-semibold">Great Faith • Moda &amp; Estilo</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left text-xs text-stone-400 bg-stone-900 border border-stone-800 p-6 sm:p-8 rounded-3xl shadow-2xl">
-                <!-- PAGO MÓVIL -->
-                <div class="space-y-4">
-                    <h5 class="font-extrabold text-stone-200 uppercase tracking-wider flex items-center text-gold-400 border-b border-stone-800 pb-3 text-sm">
-                        <i class="fa-solid fa-mobile-screen-button mr-2.5 text-base"></i> Pago Móvil
-                    </h5>
-                    <div class="p-3.5 bg-stone-950 rounded-2xl border border-stone-800/80 space-y-1.5 shadow-inner">
-                        <p class="text-[11px] text-gold-400 font-bold uppercase">Opción 1:</p>
-                        <p><strong class="text-stone-300">Banco:</strong> <span id="pm1_banco">Banco de Venezuela</span></p>
-                        <p><strong class="text-stone-300">Cédula / RIF:</strong> <span id="pm1_rif">V-22392865</span></p>
-                        <p><strong class="text-stone-300">Teléfono:</strong> <span id="pm1_tlf">0414-1539044</span></p>
-                    </div>
-                    <div class="p-3.5 bg-stone-950 rounded-2xl border border-stone-800/80 space-y-1.5 shadow-inner">
-                        <p class="text-[11px] text-gold-400 font-bold uppercase">Opción 2:</p>
-                        <p><strong class="text-stone-300">Banco:</strong> <span id="pm2_banco">Bancamiga</span></p>
-                        <p><strong class="text-stone-300">Cédula / RIF:</strong> <span id="pm2_rif">V-22392865</span></p>
-                        <p><strong class="text-stone-300">Teléfono:</strong> <span id="pm2_tlf">0412-6341323</span></p>
-                    </div>
-                </div>
-
-                <!-- TRANSFERENCIA BANCARIA -->
-                <div class="space-y-4">
-                    <h5 class="font-extrabold text-stone-200 uppercase tracking-wider flex items-center text-gold-400 border-b border-stone-800 pb-3 text-sm">
-                        <i class="fa-solid fa-building-columns mr-2.5 text-base"></i> Transferencia Bancaria
-                    </h5>
-                    <div class="p-3.5 bg-stone-950 rounded-2xl border border-stone-800/80 space-y-1.5 shadow-inner">
-                        <p class="text-[11px] text-gold-400 font-bold uppercase">Cuenta 1:</p>
-                        <p><strong class="text-stone-300">Banco:</strong> <span id="tb1_banco">Banco de Venezuela</span></p>
-                        <p><strong class="text-stone-300">Cuenta:</strong> <span id="tb1_cuenta">0102-0161-6701-0006-9488</span></p>
-                        <p><strong class="text-stone-300">Titular:</strong> <span id="tb1_titular">Lenis Torres</span></p>
-                    </div>
-                    <div class="p-3.5 bg-stone-950 rounded-2xl border border-stone-800/80 space-y-1.5 shadow-inner">
-                        <p class="text-[11px] text-gold-400 font-bold uppercase">Cuenta 2:</p>
-                        <p><strong class="text-stone-300">Banco:</strong> <span id="tb2_banco">Bancamiga</span></p>
-                        <p><strong class="text-stone-300">Cuenta:</strong> <span id="tb2_cuenta">0172-0153-1415-3450-7767</span></p>
-                        <p><strong class="text-stone-300">Titular:</strong> <span id="tb2_titular">Lenis Torres</span></p>
-                    </div>
-                </div>
-
-                <!-- PAYPAL & ENVÍOS -->
-                <div class="space-y-4">
-                    <h5 class="font-extrabold text-stone-200 uppercase tracking-wider flex items-center text-gold-400 border-b border-stone-800 pb-3 text-sm">
-                        <i class="fa-brands fa-paypal mr-2.5 text-base"></i> PayPal &amp; Envíos
-                    </h5>
-                    <div class="p-3.5 bg-stone-950 rounded-2xl border border-stone-800/80 space-y-2 shadow-inner">
-                        <p class="text-[11px] text-gold-400 font-bold uppercase">Cuenta PayPal:</p>
-                        <p><strong class="text-stone-300">Correo:</strong> <span id="paypal_email">reichell.92m@gmail.com</span></p>
-                        <p><strong class="text-stone-300">Titular:</strong> <span id="paypal_titular">Lenis Torres</span></p>
-                    </div>
-                    <div class="p-3.5 bg-stone-950 rounded-2xl border border-stone-800/80 space-y-2 shadow-inner">
-                        <p><strong class="text-stone-300">Envíos Nacionales:</strong> MRW, ZOOM, TEALCA</p>
-                        <p><strong class="text-stone-300">Horario:</strong> Lun a Sáb 8:00 AM - 6:00 PM</p>
-                        <p><strong class="text-stone-300">Atención Directa:</strong> WhatsApp 24/7</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- BOTÓN EDITAR CUENTAS (SOLO ADMIN) -->
-            <div id="adminEditAccountsContainer" class="hidden pt-3">
-                <button type="button" onclick="openEditAccountsModal()" class="px-6 py-3 bg-[#EAD8B1] hover:bg-[#d8c49e] text-stone-950 font-extrabold rounded-xl text-xs uppercase tracking-wider shadow-lg transition-all cursor-pointer">
-                    <i class="fa-solid fa-pen-to-square mr-2"></i> Editar Cuentas de Pago
-                </button>
-            </div>
-        </section>
-
-        <!-- PIE DE PÁGINA -->
-        <footer class="mt-16 pt-10 pb-8 border-t border-stone-800 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-stone-400 text-xs">
-            <div class="space-y-3">
-                <h4 class="font-black text-stone-100 uppercase tracking-wider text-sm">GREAT FAITH</h4>
-                <p class="text-stone-400 text-xs leading-relaxed">Moda &amp; Estiló urbano con estándares superiores de calidad. Telas importadas y nacionales.</p>
-            </div>
-            <div class="space-y-3">
-                <h4 class="font-black text-stone-100 uppercase tracking-wider text-sm">CATEGORÍAS</h4>
-                <ul class="space-y-2">
-                    <li><a href="#" class="hover:text-gold-400 transition-colors">Hoodies &amp; Buzos</a></li>
-                    <li><a href="#" class="hover:text-gold-400 transition-colors">Joggers Exclusivos</a></li>
-                    <li><a href="#" class="hover:text-gold-400 transition-colors">Shorts Urbanos</a></li>
-                </ul>
-            </div>
-            <div class="space-y-3">
-                <h4 class="font-black text-stone-100 uppercase tracking-wider text-sm">ATENCIÓN DIRECTA</h4>
-                <p class="text-xs text-stone-400">Pedidos y asesoría:</p>
-                <p class="font-bold text-emerald-400 flex items-center space-x-1.5 text-sm">
-                    <i class="fa-brands fa-whatsapp text-base"></i>
-                    <span>+58 414-1539044</span>
-                </p>
-            </div>
-            <div class="space-y-3">
-                <h4 class="font-black text-stone-100 uppercase tracking-wider text-sm">PLATAFORMA WEB APP</h4>
-                <p class="text-xs text-stone-400">Versión 3.9 PWA Ready</p>
-            </div>
-        </footer>
     </main>
 
-    <!-- MODAL DE CÓDIGO FUENTE -->
-    <div id="codeModal" class="fixed inset-0 bg-stone-950/85 backdrop-blur-md z-[110] hidden flex items-center justify-center p-4">
-        <div class="bg-stone-900 border border-stone-800 rounded-2xl max-w-2xl w-full p-6 space-y-4 shadow-2xl">
-            <div class="flex justify-between items-center border-b border-stone-800 pb-3">
-                <div>
-                    <h3 class="font-black text-stone-100 text-sm uppercase tracking-wider">Código para GitHub Pages</h3>
-                    <p class="text-[11px] text-stone-400">Copia el siguiente código y reemplázalo en tu archivo index.html de GitHub:</p>
-                </div>
-                <button type="button" onclick="closeCodeModal()" class="text-stone-400 hover:text-stone-100 text-sm font-bold cursor-pointer">✕</button>
-            </div>
-            <div class="relative bg-stone-950 border border-stone-800 rounded-xl p-4 max-h-60 overflow-y-auto">
-                <pre id="codeSnippetPre" class="text-[10px] text-gold-400 font-mono whitespace-pre-wrap break-all"></pre>
-            </div>
-            <div class="flex justify-end space-x-2 pt-2">
-                <button type="button" onclick="closeCodeModal()" class="px-4 py-2 rounded-xl bg-stone-800 text-stone-300 font-bold text-xs cursor-pointer">Cerrar</button>
-                <button type="button" onclick="copyCodeFromModal()" class="px-5 py-2 rounded-xl bg-[#EAD8B1] hover:bg-[#d8c49e] text-stone-950 font-black text-xs uppercase tracking-wide shadow-lg cursor-pointer">Copiar al Portapapeles</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL EDITAR CUENTAS DE PAGO -->
-    <div id="editAccountsModal" class="fixed inset-0 bg-stone-950/80 backdrop-blur-md z-[110] hidden flex items-center justify-center p-4">
-        <div class="bg-stone-900 border border-stone-800 rounded-2xl max-w-md w-full p-6 space-y-4 shadow-2xl max-h-[90vh] overflow-y-auto">
-            <div class="flex justify-between items-center border-b border-stone-800 pb-3">
-                <h3 class="font-black text-gold-400 text-sm uppercase tracking-wider">Editar Datos Bancarios y Cuentas</h3>
-                <button type="button" onclick="closeEditAccountsModal()" class="text-stone-400 hover:text-stone-100 text-sm font-bold cursor-pointer">✕</button>
-            </div>
-            <div class="space-y-3 text-xs">
-                <h4 class="font-bold text-stone-200">Pago Móvil Opción 1</h4>
-                <input type="text" id="edit_pm1_banco" placeholder="Banco" class="w-full bg-stone-950 border border-stone-800 rounded px-3 py-2 text-stone-200">
-                <input type="text" id="edit_pm1_rif" placeholder="Cédula/RIF" class="w-full bg-stone-950 border border-stone-800 rounded px-3 py-2 text-stone-200">
-                <input type="text" id="edit_pm1_tlf" placeholder="Teléfono" class="w-full bg-stone-950 border border-stone-800 rounded px-3 py-2 text-stone-200">
-
-                <h4 class="font-bold text-stone-200 pt-2">Pago Móvil Opción 2</h4>
-                <input type="text" id="edit_pm2_banco" placeholder="Banco" class="w-full bg-stone-950 border border-stone-800 rounded px-3 py-2 text-stone-200">
-                <input type="text" id="edit_pm2_rif" placeholder="Cédula/RIF" class="w-full bg-stone-950 border border-stone-800 rounded px-3 py-2 text-stone-200">
-                <input type="text" id="edit_pm2_tlf" placeholder="Teléfono" class="w-full bg-stone-950 border border-stone-800 rounded px-3 py-2 text-stone-200">
-
-                <h4 class="font-bold text-stone-200 pt-2">Transferencia Cuenta 1</h4>
-                <input type="text" id="edit_tb1_banco" placeholder="Banco" class="w-full bg-stone-950 border border-stone-800 rounded px-3 py-2 text-stone-200">
-                <input type="text" id="edit_tb1_cuenta" placeholder="N° Cuenta" class="w-full bg-stone-950 border border-stone-800 rounded px-3 py-2 text-stone-200">
-                <input type="text" id="edit_tb1_titular" placeholder="Titular" class="w-full bg-stone-950 border border-stone-800 rounded px-3 py-2 text-stone-200">
-
-                <h4 class="font-bold text-stone-200 pt-2">Transferencia Cuenta 2</h4>
-                <input type="text" id="edit_tb2_banco" placeholder="Banco" class="w-full bg-stone-950 border border-stone-800 rounded px-3 py-2 text-stone-200">
-                <input type="text" id="edit_tb2_cuenta" placeholder="N° Cuenta" class="w-full bg-stone-950 border border-stone-800 rounded px-3 py-2 text-stone-200">
-                <input type="text" id="edit_tb2_titular" placeholder="Titular" class="w-full bg-stone-950 border border-stone-800 rounded px-3 py-2 text-stone-200">
-
-                <h4 class="font-bold text-stone-200 pt-2">PayPal</h4>
-                <input type="text" id="edit_paypal_email" placeholder="Correo PayPal" class="w-full bg-stone-950 border border-stone-800 rounded px-3 py-2 text-stone-200">
-                <input type="text" id="edit_paypal_titular" placeholder="Titular PayPal" class="w-full bg-stone-950 border border-stone-800 rounded px-3 py-2 text-stone-200">
-            </div>
-            <div class="flex justify-end space-x-2 pt-3 border-t border-stone-800">
-                <button type="button" onclick="closeEditAccountsModal()" class="px-4 py-2 rounded-xl bg-stone-800 text-stone-300 font-bold text-xs cursor-pointer">Cancelar</button>
-                <button type="button" onclick="saveAccountsData()" class="px-5 py-2 rounded-xl bg-[#EAD8B1] hover:bg-[#d8c49e] text-stone-950 font-black text-xs uppercase shadow-lg cursor-pointer">Guardar Cambios</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL COMPARTIR APP -->
-    <div id="shareAppModal" class="fixed inset-0 bg-stone-950/80 backdrop-blur-md z-[110] hidden flex items-center justify-center p-4">
-        <div class="bg-stone-900 border border-stone-800 rounded-2xl max-w-md w-full p-6 space-y-5 shadow-2xl">
-            <div class="flex justify-between items-center border-b border-stone-800 pb-3">
-                <div class="flex items-center space-x-2 text-gold-400">
-                    <i class="fa-solid fa-share-nodes"></i>
-                    <h3 class="font-black text-stone-100 text-sm uppercase tracking-wider">Enlace &amp; Acceso Directo de la App</h3>
-                </div>
-                <button type="button" onclick="closeShareAppModal()" class="text-stone-400 hover:text-stone-100 text-sm font-bold cursor-pointer">✕</button>
-            </div>
-
-            <div class="bg-stone-950 border border-emerald-500/30 rounded-xl p-4 space-y-2">
-                <div class="flex items-center space-x-2 text-emerald-400 text-xs font-bold uppercase">
-                    <i class="fa-solid fa-desktop"></i>
-                    <span>Abrir directamente en tu PC</span>
-                </div>
-                <p class="text-[11px] text-stone-400 leading-relaxed">Haz clic en el botón de abajo para descargar la aplicación completa en tu computadora.</p>
-                <button type="button" onclick="downloadAppFile()" class="w-full py-2.5 bg-emerald-500 hover:bg-emerald-400 text-stone-950 font-black text-xs uppercase tracking-wider rounded-xl shadow cursor-pointer">
-                    Descargar Archivo de la App
-                </button>
-            </div>
-
-            <div class="space-y-2">
-                <div class="flex justify-between items-center">
-                    <span class="text-[11px] font-bold text-stone-300 uppercase tracking-wider">Enlace para Redes Sociales:</span>
-                    <button type="button" onclick="toggleEditShareUrl()" class="text-gold-400 hover:text-gold-300 text-[11px] font-bold cursor-pointer flex items-center space-x-1">
-                        <i class="fa-solid fa-pen-to-square"></i>
-                        <span>Editar Enlace</span>
-                    </button>
-                </div>
-                <div class="flex space-x-2">
-                    <input type="text" id="shareUrlInput" class="flex-1 bg-stone-950 border border-stone-800 rounded-lg px-3 py-2 text-xs text-gold-400 font-mono focus:outline-none focus:border-gold-500" value="https://reichell92m-netizen.github.io/great-faith-catalago-venta">
-                    <button type="button" onclick="copyShareUrl()" class="px-4 py-2 bg-[#EAD8B1] hover:bg-[#d8c49e] text-stone-950 font-extrabold text-xs rounded-lg shadow cursor-pointer flex items-center space-x-1.5">
-                        <i class="fa-regular fa-copy"></i>
-                        <span>Copiar</span>
-                    </button>
-                </div>
-            </div>
-
-            <div class="pt-2">
-                <button type="button" onclick="closeShareAppModal()" class="w-full py-3 bg-stone-800 hover:bg-stone-700 text-stone-200 font-bold text-xs uppercase tracking-wider rounded-xl shadow cursor-pointer">Cerrar</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- DRAWER DEL CARRITO INTERACTIVO -->
     <div id="cartDrawerBackdrop" onclick="toggleCartDrawer()" class="fixed inset-0 bg-stone-950/80 backdrop-blur-sm z-[90] hidden transition-opacity"></div>
     <div id="cartDrawer" class="fixed inset-y-0 right-0 w-full max-w-md bg-stone-900 border-l border-stone-800 z-[100] transform translate-x-full transition-transform duration-300 flex flex-col justify-between p-6 shadow-2xl">
         <div class="flex justify-between items-center border-b border-stone-800 pb-4">
@@ -515,26 +173,16 @@
             <input type="text" id="custAddress" placeholder="Dirección exacta de entrega o agencia *" class="w-full bg-stone-950 border border-stone-800 rounded-lg px-3 py-2 text-stone-200">
             <div class="grid grid-cols-2 gap-2">
                 <select id="custPaymentMethod" class="w-full bg-stone-950 border border-stone-800 rounded-lg px-3 py-2 text-stone-200">
-                    <option value="Pago Móvil (Opción 1)">Pago Móvil (Opción 1)</option>
-                    <option value="Pago Móvil (Opción 2)">Pago Móvil (Opción 2)</option>
-                    <option value="Transferencia Bancaria (Cta 1)">Transferencia Bancaria (Cta 1)</option>
-                    <option value="Transferencia Bancaria (Cta 2)">Transferencia Bancaria (Cta 2)</option>
+                    <option value="Pago Móvil">Pago Móvil</option>
+                    <option value="Transferencia">Transferencia Bancaria</option>
                     <option value="PayPal">PayPal</option>
-                    <option value="Efectivo ($/€)">Efectivo ($/€)</option>
+                    <option value="Efectivo">Efectivo ($/€)</option>
                 </select>
                 <input type="text" id="custRef" placeholder="N° Referencia *" class="w-full bg-stone-950 border border-stone-800 rounded-lg px-3 py-2 text-stone-200">
-            </div>
-            <div class="space-y-1 pt-1">
-                <label class="text-[10px] text-stone-400 font-bold block"><i class="fa-solid fa-paperclip mr-1 text-gold-400"></i> ADJUNTAR CAPTURE DE TRANSACCIÓN / PAGO:</label>
-                <input type="file" id="custReceiptFile" class="w-full bg-stone-950 border border-stone-800 rounded-lg px-2 py-1.5 text-[10px] text-stone-300 file:mr-3 file:py-1 file:px-3 file:rounded-md file:border-0 file:text-[10px] file:font-semibold file:bg-stone-800 file:text-gold-400 hover:file:bg-stone-700 cursor-pointer">
             </div>
         </div>
         <div class="border-t border-stone-800 pt-4 space-y-3">
             <div class="space-y-1 text-xs">
-                <div class="flex justify-between text-stone-400">
-                    <span>Subtotal USD:</span>
-                    <span id="cartSubtotalUsd">$0.00</span>
-                </div>
                 <div class="flex justify-between font-black text-stone-100 text-sm">
                     <span>Total USD:</span>
                     <span id="cartTotalUsd" class="text-gold-400">$0.00</span>
@@ -558,12 +206,8 @@
         </div>
     </div>
 
-    <!-- MODAL AUTENTICACIÓN ADMIN -->
     <div id="authModal" class="fixed inset-0 bg-stone-950/80 backdrop-blur-md z-[110] hidden flex items-center justify-center p-4">
         <div class="bg-stone-900 border border-stone-800 rounded-2xl max-w-xs w-full p-6 space-y-4 shadow-2xl text-center">
-            <div class="w-12 h-12 bg-stone-950 border border-gold-500/40 rounded-full flex items-center justify-center mx-auto text-gold-400 text-xl shadow">
-                <i class="fa-solid fa-lock"></i>
-            </div>
             <h3 class="font-black text-stone-100 text-sm uppercase tracking-wider">Acceso de Administrador</h3>
             <input type="password" id="modalPasswordInput" placeholder="Contraseña de admin" class="w-full bg-stone-950 border border-stone-800 rounded-xl px-3.5 py-2.5 text-xs text-stone-100 text-center focus:outline-none focus:border-gold-500">
             <div class="flex space-x-2">
@@ -573,25 +217,11 @@
         </div>
     </div>
 
-    <!-- MODAL CAMBIAR CONTRASEÑA -->
-    <div id="changePasswordModal" class="fixed inset-0 bg-stone-950/80 backdrop-blur-md z-[110] hidden flex items-center justify-center p-4">
-        <div class="bg-stone-900 border border-stone-800 rounded-2xl max-w-xs w-full p-6 space-y-4 shadow-2xl text-center">
-            <h3 class="font-black text-stone-100 text-sm uppercase tracking-wider">Nueva Contraseña</h3>
-            <input type="password" id="newAdminPasswordInput" placeholder="Nueva clave" class="w-full bg-stone-950 border border-stone-800 rounded-xl px-3.5 py-2.5 text-xs text-stone-100 focus:outline-none">
-            <div class="flex space-x-2">
-                <button type="button" onclick="closeChangePasswordModal()" class="w-1/2 py-2.5 rounded-xl bg-stone-800 text-stone-300 font-bold text-xs cursor-pointer">Cancelar</button>
-                <button type="button" onclick="saveNewPassword()" class="w-1/2 py-2.5 rounded-xl bg-[#EAD8B1] hover:bg-[#d8c49e] text-stone-950 font-black text-xs cursor-pointer shadow">Guardar</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- TOAST NOTIFICACIONES -->
     <div id="toast" class="fixed bottom-5 right-5 z-[120] transform transition-all duration-300 bg-[#EAD8B1] border-2 border-stone-900 text-stone-950 px-5 py-3 rounded-2xl font-extrabold text-xs shadow-2xl flex items-center space-x-3 translate-y-20 opacity-0 pointer-events-none">
         <i class="fa-solid fa-circle-check text-lg text-stone-950"></i>
-        <span id="toastMsg">¡Cambios guardados con éxito!</span>
+        <span id="toastMsg">¡Listo!</span>
     </div>
 
-    <!-- SCRIPT DE GESTIÓN INTELIGENTE Y EDICIÓN -->
     <script>
         const DEFAULT_PRODUCTS = [
             {
@@ -646,61 +276,20 @@
         let activeAudience = 'todos'; 
         let cart = [];
 
-        let ACCOUNTS_DATA = {
-            pm1_banco: "Banco de Venezuela",
-            pm1_rif: "V-22392865",
-            pm1_tlf: "0414-1539044",
-            pm2_banco: "Bancamiga",
-            pm2_rif: "V-22392865",
-            pm2_tlf: "0412-6341323",
-            tb1_banco: "Banco de Venezuela",
-            tb1_cuenta: "0102-0161-6701-0006-9488",
-            tb1_titular: "Lenis Torres",
-            tb2_banco: "Bancamiga",
-            tb2_cuenta: "0172-0153-1415-3450-7767",
-            tb2_titular: "Lenis Torres",
-            paypal_email: "reichell.92m@gmail.com",
-            paypal_titular: "Lenis Torres"
-        };
-
         function loadSavedData() {
             try {
                 const savedPwd = localStorage.getItem('gf_admin_password');
                 if (savedPwd) adminPassword = savedPwd;
                 const savedRate = localStorage.getItem('gf_eur_rate');
                 if (savedRate) eurRate = parseFloat(savedRate);
-                
                 const savedProducts = localStorage.getItem('gf_products');
-                if (savedProducts) {
-                    PRODUCTS = JSON.parse(savedProducts);
-                }
-
-                const savedAccounts = localStorage.getItem('gf_accounts');
-                if (savedAccounts) {
-                    ACCOUNTS_DATA = JSON.parse(savedAccounts);
-                }
-
-                const savedShareUrl = localStorage.getItem('gf_share_url');
-                if (savedShareUrl) {
-                    const shareInput = document.getElementById('shareUrlInput');
-                    if (shareInput) shareInput.value = savedShareUrl;
-                }
-            } catch (e) {
-                console.error(e);
-            }
+                if (savedProducts) PRODUCTS = JSON.parse(savedProducts);
+            } catch (e) {}
 
             isAdmin = false;
-            const banner = document.getElementById('adminModeBanner');
-            const exclusiveBtns = document.getElementById('adminExclusiveButtons');
-            const addBtnContainer = document.getElementById('adminAddProductBtnContainer');
-            const editAccContainer = document.getElementById('adminEditAccountsContainer');
-
-            if (banner) banner.classList.add('hidden');
-            if (exclusiveBtns) exclusiveBtns.classList.add('hidden');
-            if (addBtnContainer) addBtnContainer.classList.add('hidden');
-            if (editAccContainer) editAccContainer.classList.add('hidden');
-
-            renderAccountsToUI();
+            document.getElementById('adminModeBanner').classList.add('hidden');
+            document.getElementById('adminExclusiveButtons').classList.add('hidden');
+            document.getElementById('adminAddProductBtnContainer').classList.add('hidden');
         }
 
         function saveCatalogData() {
@@ -708,64 +297,18 @@
                 localStorage.setItem('gf_products', JSON.stringify(PRODUCTS));
                 localStorage.setItem('gf_eur_rate', eurRate.toString());
                 localStorage.setItem('gf_admin_password', adminPassword);
-                localStorage.setItem('gf_accounts', JSON.stringify(ACCOUNTS_DATA));
-                const shareInput = document.getElementById('shareUrlInput');
-                if (shareInput) {
-                    localStorage.setItem('gf_share_url', shareInput.value.trim());
-                }
             } catch (e) {}
         }
 
         function saveCatalogDataPermanent() {
             saveCatalogData();
-            showToast("¡Inventario, precios, cuentas y ajustes guardados en la nube y local! ✨☁️");
-        }
-
-        function syncCloudProducts(showSuccess = false) {
-            saveCatalogData();
-            loadSavedData();
-            renderProducts();
-            if (showSuccess) {
-                showToast('¡Catálogo sincronizado correctamente desde la nube! ☁️✨');
-            }
-        }
-
-        function renderAccountsToUI() {
-            for (let key in ACCOUNTS_DATA) {
-                const el = document.getElementById(key);
-                if (el) el.innerText = ACCOUNTS_DATA[key];
-            }
-        }
-
-        function openEditAccountsModal() {
-            for (let key in ACCOUNTS_DATA) {
-                const inputEl = document.getElementById(`edit_${key}`);
-                if (inputEl) inputEl.value = ACCOUNTS_DATA[key];
-            }
-            document.getElementById('editAccountsModal').classList.remove('hidden');
-        }
-
-        function closeEditAccountsModal() {
-            document.getElementById('editAccountsModal').classList.add('hidden');
-        }
-
-        function saveAccountsData() {
-            for (let key in ACCOUNTS_DATA) {
-                const inputEl = document.getElementById(`edit_${key}`);
-                if (inputEl) ACCOUNTS_DATA[key] = inputEl.value.trim();
-            }
-            saveCatalogData();
-            renderAccountsToUI();
-            closeEditAccountsModal();
-            showToast('¡Cuentas de pago actualizadas con éxito! 💳✨');
+            showToast("¡Inventario y ajustes guardados con éxito! ✨");
         }
 
         function filterType(typeVal, element) {
             activeType = typeVal;
             const buttons = element.parentElement.querySelectorAll('.type-btn');
-            buttons.forEach(btn => {
-                btn.className = "type-btn px-3.5 py-2 bg-stone-950 text-stone-400 font-bold text-xs rounded-full border border-stone-800 hover:border-gold-500/50 hover:text-gold-400 transition-all cursor-pointer";
-            });
+            buttons.forEach(btn => btn.className = "type-btn px-3.5 py-2 bg-stone-950 text-stone-400 font-bold text-xs rounded-full border border-stone-800 hover:border-gold-500/50 hover:text-gold-400 transition-all cursor-pointer");
             element.className = "type-btn px-3.5 py-2 bg-[#EAD8B1] text-stone-950 font-extrabold text-xs rounded-full shadow-md transition-all cursor-pointer";
             renderProducts();
         }
@@ -773,9 +316,7 @@
         function filterAudience(audVal, element) {
             activeAudience = audVal;
             const buttons = element.parentElement.querySelectorAll('.aud-btn');
-            buttons.forEach(btn => {
-                btn.className = "aud-btn px-3.5 py-2 bg-stone-950 text-stone-400 font-bold text-xs rounded-full border border-stone-800 hover:border-gold-500/50 hover:text-gold-400 transition-all cursor-pointer";
-            });
+            buttons.forEach(btn => btn.className = "aud-btn px-3.5 py-2 bg-stone-950 text-stone-400 font-bold text-xs rounded-full border border-stone-800 hover:border-gold-500/50 hover:text-gold-400 transition-all cursor-pointer");
             element.className = "aud-btn px-3.5 py-2 bg-[#EAD8B1] text-stone-950 font-extrabold text-xs rounded-full shadow-md transition-all cursor-pointer";
             renderProducts();
         }
@@ -785,17 +326,12 @@
             typeBtns.forEach(btn => {
                 if (btn.getAttribute('onclick').includes(`'${activeType}'`)) {
                     btn.className = "type-btn px-3.5 py-2 bg-[#EAD8B1] text-stone-950 font-extrabold text-xs rounded-full shadow-md transition-all cursor-pointer";
-                } else {
-                    btn.className = "type-btn px-3.5 py-2 bg-stone-950 text-stone-400 font-bold text-xs rounded-full border border-stone-800 hover:border-gold-500/50 hover:text-gold-400 transition-all cursor-pointer";
                 }
             });
-
             const audBtns = document.querySelectorAll('.aud-btn');
             audBtns.forEach(btn => {
                 if (btn.getAttribute('onclick').includes(`'${activeAudience}'`)) {
                     btn.className = "aud-btn px-3.5 py-2 bg-[#EAD8B1] text-stone-950 font-extrabold text-xs rounded-full shadow-md transition-all cursor-pointer";
-                } else {
-                    btn.className = "aud-btn px-3.5 py-2 bg-stone-950 text-stone-400 font-bold text-xs rounded-full border border-stone-800 hover:border-gold-500/50 hover:text-gold-400 transition-all cursor-pointer";
                 }
             });
         }
@@ -810,40 +346,22 @@
 
             const filtered = PRODUCTS.filter(p => {
                 if (searchVal) {
-                    const matchName = p.name.toLowerCase().includes(searchVal);
-                    const matchFabric = p.fabric.toLowerCase().includes(searchVal);
-                    return matchName || matchFabric;
+                    return p.name.toLowerCase().includes(searchVal) || p.fabric.toLowerCase().includes(searchVal);
                 }
-
-                if (activeType === 'sublimacion') {
-                    if (p.tipo !== 'sublimacion') return false;
-                } else if (activeType === 'confeccion') {
-                    if (p.tipo !== 'confeccion') return false;
-                } else {
-                    if (p.tipo === 'sublimacion') return false;
-                }
-                
-                if (activeAudience !== 'todos') {
-                    if (p.category !== activeAudience) return false;
-                }
-
+                if (activeType === 'sublimacion' && p.tipo !== 'sublimacion') return false;
+                if (activeType === 'confeccion' && p.tipo !== 'confeccion') return false;
+                if (activeType === 'todos' && p.tipo === 'sublimacion') return false;
+                if (activeAudience !== 'todos' && p.category !== activeAudience) return false;
                 return true;
             });
 
             if (filtered.length === 0) {
-                container.innerHTML = `
-                    <div class="col-span-full py-16 text-center text-stone-500 space-y-2">
-                        <i class="fa-solid fa-shirt text-4xl text-stone-700"></i>
-                        <p class="text-sm font-semibold">No se encontró ninguna prenda con ese nombre o criterio.</p>
-                    </div>
-                `;
+                container.innerHTML = `<div class="col-span-full py-16 text-center text-stone-500 space-y-2"><i class="fa-solid fa-shirt text-4xl text-stone-700"></i><p class="text-sm font-semibold">No se encontró ninguna prenda.</p></div>`;
                 return;
             }
 
             filtered.forEach(p => {
                 const totalStock = p.sizes ? p.sizes.reduce((acc, s) => acc + (parseInt(s.quantity) || 0), 0) : 0;
-                p.stock = totalStock;
-
                 const priceDetalBs = (p.priceDetal * eurRate).toLocaleString('es-VE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
                 const priceMayorBs = (p.priceMayor * eurRate).toLocaleString('es-VE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
                 const currentImg = (p.images && p.images[p.activeImageIndex]) || (p.images && p.images[0]) || '';
@@ -851,142 +369,45 @@
                 const card = document.createElement('div');
                 card.className = "bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden shadow-xl flex flex-col justify-between transition-all duration-300 hover:border-stone-700 relative";
 
-                let adminDeleteBtnHtml = isAdmin ? `
-                    <button type="button" onclick="deleteProduct('${p.id}')" class="absolute top-2.5 right-2.5 z-30 bg-red-600/90 hover:bg-red-500 text-white text-[11px] font-black px-2.5 py-1 rounded-lg shadow-lg border border-red-400/30 cursor-pointer">
-                        <i class="fa-solid fa-trash"></i>
-                    </button>
-                ` : '';
+                let adminDeleteBtnHtml = isAdmin ? `<button type="button" onclick="deleteProduct('${p.id}')" class="absolute top-2.5 right-2.5 z-30 bg-red-600/90 text-white text-[11px] font-black px-2.5 py-1 rounded-lg shadow-lg cursor-pointer"><i class="fa-solid fa-trash"></i></button>` : '';
 
                 let adminEditHtml = '';
                 if (isAdmin) {
                     let sizesGridHtml = p.sizes.map((s, idx) => `
                         <div class="flex items-center space-x-1 bg-stone-950 p-1.5 rounded-xl border border-stone-800">
-                            <input type="text" value="${s.name}" onchange="updateSizeName('${p.id}', ${idx}, this.value)" class="w-8 bg-stone-900 border border-stone-700 text-gold-400 font-bold text-center text-xs rounded py-1 px-0.5">
-                            <input type="number" min="0" value="${s.quantity}" onchange="updateSizeQty('${p.id}', ${idx}, this.value)" class="flex-1 min-w-[24px] bg-stone-900 border border-stone-700 text-stone-100 text-center text-xs rounded py-1 px-0.5">
-                            <button type="button" onclick="removeSizeFromProduct('${p.id}', ${idx})" class="text-red-400 hover:text-red-300 text-[10px] px-0.5 cursor-pointer" title="Eliminar">✕</button>
+                            <input type="text" value="${s.name}" onchange="updateSizeName('${p.id}', ${idx}, this.value)" class="w-8 bg-stone-900 border border-stone-700 text-gold-400 font-bold text-center text-xs rounded py-1">
+                            <input type="number" min="0" value="${s.quantity}" onchange="updateSizeQty('${p.id}', ${idx}, this.value)" class="flex-1 bg-stone-900 border border-stone-700 text-stone-100 text-center text-xs rounded py-1">
                         </div>
                     `).join('');
-
-                    let colorsGridHtml = p.colors.map((c, idx) => `
-                        <div class="flex items-center space-x-1 bg-stone-950 p-1.5 rounded-xl border border-stone-800">
-                            <input type="text" value="${c.name}" onchange="updateColorName('${p.id}', ${idx}, this.value)" class="w-14 bg-stone-900 border border-stone-700 text-stone-300 font-bold text-center text-xs rounded py-1 px-0.5">
-                            <input type="number" min="0" value="${c.quantity}" onchange="updateColorQty('${p.id}', ${idx}, this.value)" class="flex-1 min-w-[24px] bg-stone-900 border border-stone-700 text-stone-100 text-center text-xs rounded py-1 px-0.5">
-                            <button type="button" onclick="removeColorFromProduct('${p.id}', ${idx})" class="text-red-400 hover:text-red-300 text-[10px] px-0.5 cursor-pointer" title="Eliminar">✕</button>
-                        </div>
-                    `).join('');
-
-                    let imageThumbnailsHtml = p.images.map((imgUrl, imgIdx) => `
-                        <div class="relative group/thumb w-10 h-10 rounded-xl overflow-hidden border-2 cursor-pointer ${imgIdx === p.activeImageIndex ? 'border-gold-500' : 'border-stone-700 opacity-70'}">
-                            <img src="${imgUrl}" onclick="setActiveImage('${p.id}', ${imgIdx})" class="w-full h-full object-cover">
-                        </div>
-                    `).join('');
-
-                    adminEditHtml = `
-                        <div class="p-3 bg-stone-950/95 border-b border-stone-800 space-y-3 text-xs">
-                            <div class="flex justify-between items-center border-b border-stone-800 pb-2">
-                                <span class="text-gold-400 font-extrabold uppercase tracking-wider text-[11px]"><i class="fa-solid fa-user-shield mr-1"></i> Admin Prenda</span>
-                                <span class="bg-stone-900 border border-gold-500/50 text-gold-400 font-black px-3 py-1 rounded-xl text-sm tracking-wide">TOTAL: ${totalStock} u.</span>
-                            </div>
-                            
-                            <div class="space-y-1.5">
-                                <label class="text-[10px] text-stone-400 uppercase font-extrabold block">Imágenes de la Prenda:</label>
-                                <div class="flex items-center flex-wrap gap-1.5">
-                                    ${imageThumbnailsHtml}
-                                    <label class="w-10 h-10 rounded-xl border-2 border-dashed border-gold-500/50 hover:border-gold-400 flex items-center justify-center text-gold-400 cursor-pointer bg-stone-900/80 transition-all shadow" title="Subir nueva imagen">
-                                        <i class="fa-solid fa-plus text-sm"></i>
-                                        <input type="file" accept="image/*" onchange="uploadNewProductImage('${p.id}', event)" class="hidden">
-                                    </label>
-                                </div>
-                                <div class="flex space-x-1 pt-1">
-                                    <input type="text" id="new-img-url-${p.id}" placeholder="O pegar URL de imagen..." class="flex-1 bg-stone-900 border border-stone-800 rounded-lg px-2 py-1 text-[11px] text-stone-200 focus:outline-none focus:border-gold-500">
-                                    <button type="button" onclick="addProductImageByUrl('${p.id}')" class="px-2.5 py-1 bg-stone-800 hover:bg-stone-700 text-gold-400 font-bold rounded-lg text-[10px] transition-all cursor-pointer">Agregar</button>
-                                </div>
-                            </div>
-
-                            <div class="space-y-1.5">
-                                <div class="flex justify-between items-center">
-                                    <label class="text-[10px] text-stone-400 uppercase font-extrabold">Tallas y Cantidades:</label>
-                                    <button type="button" onclick="addSizeToProduct('${p.id}')" class="text-gold-400 hover:text-gold-300 font-bold text-[10px] cursor-pointer">+ Talla</button>
-                                </div>
-                                <div class="grid grid-cols-3 gap-1">${sizesGridHtml}</div>
-                            </div>
-
-                            <div class="space-y-1.5">
-                                <div class="flex justify-between items-center">
-                                    <label class="text-[10px] text-stone-400 uppercase font-extrabold">Colores y Cantidades:</label>
-                                    <button type="button" onclick="addColorToProduct('${p.id}')" class="text-gold-400 hover:text-gold-300 font-bold text-[10px] cursor-pointer">+ Color</button>
-                                </div>
-                                <div class="grid grid-cols-3 gap-1">${colorsGridHtml}</div>
-                            </div>
-                        </div>
-                    `;
+                    adminEditHtml = `<div class="p-3 bg-stone-950 border-b border-stone-800 space-y-2 text-xs"><div class="flex justify-between"><span class="text-gold-400 font-extrabold uppercase">Admin Prenda</span><span class="text-gold-400 font-black text-sm">TOTAL: ${totalStock} u.</span></div><div class="grid grid-cols-3 gap-1">${sizesGridHtml}</div></div>`;
                 }
 
-                let stockDisplayHtml = `
-                    <div class="mt-3 mx-3 px-3.5 py-2.5 bg-stone-950 border border-stone-800 rounded-xl flex items-center justify-between text-sm shadow-inner">
-                        <span class="text-stone-300 font-medium text-xs">Existencia Total:</span>
-                        <span class="text-gold-400 font-black text-sm">${totalStock} unids</span>
-                    </div>
-                `;
-
-                let titleHtml = isAdmin ? `
-                    <input type="text" value="${p.name}" onchange="updateProductName('${p.id}', this.value)" class="w-full bg-stone-950 border border-gold-500/60 text-stone-100 font-bold text-xs sm:text-sm px-2.5 py-1.5 rounded-xl">
-                ` : `<h3 class="font-bold text-stone-100 text-xs sm:text-sm leading-snug">${p.name}</h3>`;
-
-                let fabricHtml = isAdmin ? `
-                    <input type="text" value="${p.fabric}" onchange="updateProductFabric('${p.id}', this.value)" class="w-full bg-stone-950 border border-gold-500/40 text-gold-400 text-[11px] px-2.5 py-1 rounded-xl">
-                ` : `<p class="text-[11px] sm:text-xs text-gold-400 font-medium">${p.fabric}</p>`;
-
-                let priceBoxHtml = isAdmin ? `
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 bg-stone-950 p-3 rounded-xl border border-stone-800/80 text-xs">
-                        <div>
-                            <span class="text-[10px] text-stone-400 uppercase font-bold block mb-1">Precio Detal ($)</span>
-                            <input type="number" step="0.5" value="${p.priceDetal}" onchange="updateProductPriceDetal('${p.id}', this.value)" class="w-full bg-stone-900 border border-stone-700 text-gold-400 font-bold text-xs px-2 py-1.5 rounded-lg text-center">
-                            <span class="block text-[11px] text-stone-300 mt-1 font-mono">Bs. ${priceDetalBs}</span>
-                        </div>
-                        <div>
-                            <span class="text-[10px] text-emerald-400 uppercase font-bold block mb-1">Precio Mayor ($)</span>
-                            <input type="number" step="0.5" value="${p.priceMayor}" onchange="updateProductPriceMayor('${p.id}', this.value)" class="w-full bg-stone-900 border border-stone-700 text-emerald-400 font-bold text-xs px-2 py-1.5 rounded-lg text-center">
-                            <span class="block text-[11px] text-stone-300 mt-1 font-mono">Bs. ${priceMayorBs}</span>
-                        </div>
-                    </div>
-                ` : `
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 bg-stone-950 p-3 rounded-xl border border-stone-800/80 text-xs">
-                        <div>
-                            <span class="text-[10px] text-stone-400 uppercase font-bold block">Precio Detal</span>
-                            <span class="font-black text-gold-400 text-xs sm:text-sm">$${p.priceDetal.toFixed(2)}</span>
-                            <span class="block text-[11px] font-mono font-bold text-gold-400">Bs. ${priceDetalBs}</span>
-                        </div>
-                        <div>
-                            <span class="text-[10px] text-emerald-400 uppercase font-bold block">Mayor (≥${p.minMayorQty})</span>
-                            <span class="font-black text-emerald-400 text-xs sm:text-sm">$${p.priceMayor.toFixed(2)}</span>
-                            <span class="block text-[11px] font-mono font-bold text-emerald-400">Bs. ${priceMayorBs}</span>
-                        </div>
-                    </div>
-                `;
-
-                let selectSizesOptions = p.sizes.map(s => {
-                    const label = s.quantity <= 0 ? `${s.name} (0)` : `${s.name} (${s.quantity})`;
-                    return `<option value="${s.name}">${label}</option>`;
-                }).join('');
-
-                let selectColorsOptions = p.colors.map(c => {
-                    const label = c.quantity <= 0 ? `${c.name} (0)` : `${c.name} (${c.quantity})`;
-                    return `<option value="${c.name}">${label}</option>`;
-                }).join('');
+                let selectSizesOptions = p.sizes.map(s => `<option value="${s.name}">${s.name} (${s.quantity})</option>`).join('');
+                let selectColorsOptions = p.colors.map(c => `<option value="${c.name}">${c.name} (${c.quantity})</option>`).join('');
 
                 card.innerHTML = `
                     ${adminDeleteBtnHtml}
                     <div class="relative group bg-stone-950 aspect-square overflow-hidden">
-                        <img src="${currentImg}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="${currentImg}" alt="${p.name}" class="w-full h-full object-cover">
                     </div>
                     ${adminEditHtml}
-                    ${!isAdmin ? stockDisplayHtml : ''}
+                    ${!isAdmin ? `<div class="mt-3 mx-3 px-3.5 py-2.5 bg-stone-950 border border-stone-800 rounded-xl flex items-center justify-between text-sm shadow-inner"><span class="text-stone-300 font-medium text-xs">Existencia Total:</span><span class="text-gold-400 font-black text-sm">${totalStock} unids</span></div>` : ''}
                     <div class="p-4 space-y-3 flex-1 flex flex-col justify-between">
                         <div class="space-y-2.5">
-                            ${titleHtml}
-                            ${fabricHtml}
-                            ${priceBoxHtml}
+                            <h3 class="font-bold text-stone-100 text-xs sm:text-sm leading-snug">${p.name}</h3>
+                            <p class="text-[11px] sm:text-xs text-gold-400 font-medium">${p.fabric}</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 bg-stone-950 p-3 rounded-xl border border-stone-800/80 text-xs">
+                                <div>
+                                    <span class="text-[10px] text-stone-400 uppercase font-bold block">Precio Detal</span>
+                                    <span class="font-black text-gold-400 text-xs sm:text-sm">$${p.priceDetal.toFixed(2)}</span>
+                                    <span class="block text-[11px] font-mono font-bold text-gold-400">Bs. ${priceDetalBs}</span>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] text-emerald-400 uppercase font-bold block">Mayor (≥${p.minMayorQty})</span>
+                                    <span class="font-black text-emerald-400 text-xs sm:text-sm">$${p.priceMayor.toFixed(2)}</span>
+                                    <span class="block text-[11px] font-mono font-bold text-emerald-400">Bs. ${priceMayorBs}</span>
+                                </div>
+                            </div>
                         </div>
                         <div class="pt-3 border-t border-stone-800 space-y-3">
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -1010,141 +431,6 @@
             });
         }
 
-        function setActiveImage(productId, idx) {
-            const p = PRODUCTS.find(prod => prod.id === productId);
-            if (p) {
-                p.activeImageIndex = idx;
-                saveCatalogData();
-                renderProducts();
-            }
-        }
-
-        function uploadNewProductImage(productId, event) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const p = PRODUCTS.find(prod => prod.id === productId);
-                    if (p) {
-                        if (!p.images) p.images = [];
-                        p.images.push(e.target.result);
-                        p.activeImageIndex = p.images.length - 1;
-                        saveCatalogData();
-                        renderProducts();
-                        showToast("¡Nueva imagen agregada con éxito! ✨");
-                    }
-                };
-                reader.readAsDataURL(file);
-            }
-        }
-
-        function addProductImageByUrl(productId) {
-            const urlInput = document.getElementById(`new-img-url-${productId}`);
-            const url = urlInput ? urlInput.value.trim() : '';
-            if (url) {
-                const p = PRODUCTS.find(prod => prod.id === productId);
-                if (p) {
-                    if (!p.images) p.images = [];
-                    p.images.push(url);
-                    p.activeImageIndex = p.images.length - 1;
-                    saveCatalogData();
-                    renderProducts();
-                    showToast("¡Imagen agregada por URL correctamente! ✨");
-                }
-            } else {
-                showToast("Por favor ingresa una URL válida");
-            }
-        }
-
-        function addSizeToProduct(productId) {
-            const p = PRODUCTS.find(prod => prod.id === productId);
-            if (p) {
-                if (!p.sizes) p.sizes = [];
-                p.sizes.push({ name: "Única", quantity: 5 });
-                saveCatalogData();
-                renderProducts();
-                showToast("Talla agregada");
-            }
-        }
-
-        function addColorToProduct(productId) {
-            const p = PRODUCTS.find(prod => prod.id === productId);
-            if (p) {
-                if (!p.colors) p.colors = [];
-                p.colors.push({ name: "Estándar", quantity: 5 });
-                saveCatalogData();
-                renderProducts();
-                showToast("Color agregado");
-            }
-        }
-
-        function updateProductName(productId, val) {
-            const p = PRODUCTS.find(prod => prod.id === productId);
-            if (p) { p.name = val.trim(); saveCatalogData(); }
-        }
-
-        function updateProductFabric(productId, val) {
-            const p = PRODUCTS.find(prod => prod.id === productId);
-            if (p) { p.fabric = val.trim(); saveCatalogData(); }
-        }
-
-        function updateProductPriceDetal(productId, val) {
-            const p = PRODUCTS.find(prod => prod.id === productId);
-            if (p) { p.priceDetal = parseFloat(val) || 0; saveCatalogData(); }
-        }
-
-        function updateProductPriceMayor(productId, val) {
-            const p = PRODUCTS.find(prod => prod.id === productId);
-            if (p) { p.priceMayor = parseFloat(val) || 0; saveCatalogData(); }
-        }
-
-        function updateSizeName(productId, sizeIdx, val) {
-            const p = PRODUCTS.find(prod => prod.id === productId);
-            if (p && p.sizes[sizeIdx]) { p.sizes[sizeIdx].name = val.trim(); saveCatalogData(); }
-        }
-
-        function updateSizeQty(productId, sizeIdx, val) {
-            const p = PRODUCTS.find(prod => prod.id === productId);
-            if (p && p.sizes[sizeIdx]) {
-                p.sizes[sizeIdx].quantity = parseInt(val) || 0;
-                saveCatalogData();
-                renderProducts();
-            }
-        }
-
-        function removeSizeFromProduct(productId, sizeIdx) {
-            const p = PRODUCTS.find(prod => prod.id === productId);
-            if (p && p.sizes) {
-                p.sizes.splice(sizeIdx, 1);
-                saveCatalogData();
-                renderProducts();
-                showToast("Talla eliminada");
-            }
-        }
-
-        function updateColorName(productId, colorIdx, val) {
-            const p = PRODUCTS.find(prod => prod.id === productId);
-            if (p && p.colors[colorIdx]) { p.colors[colorIdx].name = val.trim(); saveCatalogData(); }
-        }
-
-        function updateColorQty(productId, colorIdx, val) {
-            const p = PRODUCTS.find(prod => prod.id === productId);
-            if (p && p.colors[colorIdx]) {
-                p.colors[colorIdx].quantity = parseInt(val) || 0;
-                saveCatalogData();
-            }
-        }
-
-        function removeColorFromProduct(productId, colorIdx) {
-            const p = PRODUCTS.find(prod => prod.id === productId);
-            if (p && p.colors) {
-                p.colors.splice(colorIdx, 1);
-                saveCatalogData();
-                renderProducts();
-                showToast("Color eliminado");
-            }
-        }
-
         function addToCart(productId) {
             const prod = PRODUCTS.find(p => p.id === productId);
             if (!prod) return;
@@ -1153,88 +439,32 @@
             const selectedSize = sizeSelect ? sizeSelect.value : '';
             const selectedColor = colorSelect ? colorSelect.value : '';
 
-            const sizeObj = prod.sizes.find(s => s.name === selectedSize);
-            if (!sizeObj || sizeObj.quantity <= 0) {
-                showToast(`❌ La talla "${selectedSize}" está en 0 y no se puede agregar.`);
-                return;
-            }
-
-            const colorObj = prod.colors.find(c => c.name === selectedColor);
-            if (colorObj && colorObj.quantity <= 0) {
-                showToast(`❌ El color "${selectedColor}" está en 0 y no se puede agregar.`);
-                return;
-            }
-
             cart.push({
                 productId: prod.id,
                 name: prod.name,
                 size: selectedSize,
                 color: selectedColor || 'Estándar',
                 qty: 1,
-                image: (prod.images && prod.images[prod.activeImageIndex]) || (prod.images && prod.images[0]) || ''
+                image: (prod.images && prod.images[0]) || ''
             });
             updateCartSummary();
-            showToast(`${prod.name} (${selectedSize}) agregado al carrito`);
+            showToast(`${prod.name} agregado al carrito`);
         }
 
         function updateCartSummary() {
-            let totalQty = 0;
-            let totalUsd = 0;
-            const itemsContainer = document.getElementById('cartItemsList');
-            if (!itemsContainer) return;
-            itemsContainer.innerHTML = '';
-
-            if (cart.length === 0) {
-                const emptyMsg = document.getElementById('emptyCartMsg');
-                if (emptyMsg) emptyMsg.classList.remove('hidden');
-            } else {
-                const emptyMsg = document.getElementById('emptyCartMsg');
-                if (emptyMsg) emptyMsg.classList.add('hidden');
-            }
-
-            const productQtyMap = {};
-            cart.forEach(item => { productQtyMap[item.productId] = (productQtyMap[item.productId] || 0) + item.qty; });
-
-            cart.forEach((item, index) => {
+            let totalQty = cart.reduce((acc, item) => acc + item.qty, 0);
+            let totalUsd = cart.reduce((acc, item) => {
                 const prod = PRODUCTS.find(p => p.id === item.productId);
-                const totalProductQty = productQtyMap[item.productId] || item.qty;
-                let unitPrice = prod ? prod.priceDetal : 0;
-                if (prod && totalProductQty >= prod.minMayorQty) unitPrice = prod.priceMayor;
-                const itemTotal = unitPrice * item.qty;
-                totalQty += item.qty;
-                totalUsd += itemTotal;
-
-                const cartItemEl = document.createElement('div');
-                cartItemEl.className = "py-3 flex items-center justify-between space-x-3";
-                cartItemEl.innerHTML = `
-                    <img src="${item.image}" class="w-12 h-12 object-cover rounded-lg border border-stone-800">
-                    <div class="flex-1 min-w-0">
-                        <h4 class="font-bold text-stone-200 text-xs truncate">${item.name}</h4>
-                        <p class="text-[10px] text-stone-400">Talla: <span class="text-stone-200 font-bold">${item.size}</span> | Color: <span class="text-stone-200 font-bold">${item.color}</span></p>
-                        <span class="text-xs font-bold text-gold-400">$${unitPrice.toFixed(2)}</span>
-                    </div>
-                    <div class="flex items-center space-x-2">
-                        <button type="button" onclick="removeCartItem(${index})" class="text-red-400 hover:text-red-300 text-xs p-1 cursor-pointer">✕</button>
-                    </div>
-                `;
-                itemsContainer.appendChild(cartItemEl);
-            });
-
+                return acc + (prod ? prod.priceDetal * item.qty : 0);
+            }, 0);
             const totalBs = (totalUsd * eurRate).toLocaleString('es-VE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            
             const badgeEl = document.getElementById('cartHeaderBadge');
-            const subtotalEl = document.getElementById('cartSubtotalUsd');
             const totalUsdEl = document.getElementById('cartTotalUsd');
             const totalBsEl = document.getElementById('cartTotalBs');
-
             if (badgeEl) badgeEl.innerText = totalQty;
-            if (subtotalEl) subtotalEl.innerText = `$${totalUsd.toFixed(2)}`;
             if (totalUsdEl) totalUsdEl.innerText = `$${totalUsd.toFixed(2)}`;
             if (totalBsEl) totalBsEl.innerText = `Bs. ${totalBs}`;
-        }
-
-        function removeCartItem(index) {
-            cart.splice(index, 1);
-            updateCartSummary();
         }
 
         function toggleCartDrawer() {
@@ -1247,7 +477,6 @@
         }
 
         function showCheckoutForm() {
-            if (cart.length === 0) { showToast('Tu carrito está vacío'); return; }
             document.getElementById('checkoutForm').classList.remove('hidden');
             document.getElementById('cartActionBtns').classList.add('hidden');
             document.getElementById('checkoutActionBtns').classList.remove('hidden');
@@ -1260,264 +489,36 @@
         }
 
         function sendOrderToWhatsApp() {
-            const nameField = document.getElementById('custName');
-            const idField = document.getElementById('custId');
-            const phoneField = document.getElementById('custPhone');
-            const shippingField = document.getElementById('custShipping');
-            const addressField = document.getElementById('custAddress');
-            const paymentMethodField = document.getElementById('custPaymentMethod');
-            const refField = document.getElementById('custRef');
-            const receiptField = document.getElementById('custReceiptFile');
-
-            const name = nameField.value.trim();
-            const idNum = idField.value.trim();
-            const phone = phoneField.value.trim();
-            const shipping = shippingField.value;
-            const address = addressField.value.trim();
-            const paymentMethod = paymentMethodField.value;
-            const ref = refField.value.trim();
-
-            if (!name || !idNum || !phone || !address || !ref) {
-                showToast('Por favor completa todos los campos obligatorios (*)');
-                return;
-            }
-
-            cart.forEach(cartItem => {
-                const prod = PRODUCTS.find(p => p.id === cartItem.productId);
-                if (prod) {
-                    const sizeObj = prod.sizes.find(s => s.name === cartItem.size);
-                    if (sizeObj) {
-                        sizeObj.quantity = Math.max(0, sizeObj.quantity - cartItem.qty);
-                    }
-                    const colorObj = prod.colors.find(c => c.name === cartItem.color);
-                    if (colorObj) {
-                        colorObj.quantity = Math.max(0, colorObj.quantity - cartItem.qty);
-                    }
-                }
-            });
-            saveCatalogData();
-            renderProducts();
-
-            let totalUsd = 0;
-            const productQtyMap = {};
-            cart.forEach(item => { productQtyMap[item.productId] = (productQtyMap[item.productId] || 0) + item.qty; });
-
-            let detalleStr = "";
-            cart.forEach(item => {
-                const prod = PRODUCTS.find(p => p.id === item.productId);
-                const totalProductQty = productQtyMap[item.productId] || item.qty;
-                let unitPrice = prod ? prod.priceDetal : 0;
-                if (prod && totalProductQty >= prod.minMayorQty) unitPrice = prod.priceMayor;
-                const itemTotal = unitPrice * item.qty;
-                totalUsd += itemTotal;
-                detalleStr += `• ${item.name} (${item.size} / ${item.color}) x${item.qty} -> $${itemTotal.toFixed(2)}\n`;
-            });
-
-            const totalBs = (totalUsd * eurRate).toLocaleString('es-VE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-            const tasaBsStr = eurRate.toLocaleString('es-VE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-
-            let text = `🛍️ *NUEVO PEDIDO - GREAT FAITH*\n\n`;
-            text += `👤 *Cliente:* ${name}\n`;
-            text += `🪪 *Cédula/RIF:* ${idNum}\n`;
-            text += `📞 *Teléfono:* ${phone}\n`;
-            text += `🚚 *Método de Envío:* ${shipping}\n`;
-            text += `📍 *Dirección/Agencia:* ${address}\n`;
-            text += `💳 *Método de Pago:* ${paymentMethod}\n`;
-            text += `🔢 *N° Referencia:* ${ref}\n`;
-            text += `🖼️ *Capture:* Adjunto en el chat\n\n`;
-            text += `📋 *DETALLE DEL PEDIDO:*\n${detalleStr}\n`;
-            text += `💰 *TOTAL A PAGAR:* $${totalUsd.toFixed(2)} (Bs. ${totalBs})\n`;
-            text += `📊 *Tasa EUR/BCV:* Bs. ${tasaBsStr}\n\n`;
-            text += `¡Quedo atento a la confirmación de mi pedido!`;
-
-            const whatsappUrl = `https://api.whatsapp.com/send?phone=584141539044&text=${encodeURIComponent(text)}`;
-            window.open(whatsappUrl, '_blank');
-
-            cart = [];
-            nameField.value = '';
-            idField.value = '';
-            phoneField.value = '';
-            addressField.value = '';
-            refField.value = '';
-            if (receiptField) receiptField.value = '';
-
-            updateCartSummary();
-            hideCheckoutForm();
-            toggleCartDrawer();
-            showToast('¡Pedido enviado, stock descontado y datos limpios! 🎉');
+            let text = `🛍️ *PEDIDO GREAT FAITH*\nTotal items: ${cart.length}`;
+            window.open(`https://api.whatsapp.com/send?phone=584141539044&text=${encodeURIComponent(text)}`, '_blank');
         }
 
         function toggleAdminAuthModal() {
             if (isAdmin) {
-                logoutAdmin();
-            } else {
-                document.getElementById('modalPasswordInput').value = '';
-                document.getElementById('authModal').classList.remove('hidden');
-            }
-        }
-
-        function loginAdminModal() {
-            const pwd = document.getElementById('modalPasswordInput').value.trim();
-            if (pwd === adminPassword) {
-                isAdmin = true;
-                document.getElementById('modalPasswordInput').value = '';
-                document.getElementById('authModal').classList.add('hidden');
-                document.getElementById('adminModeBanner').classList.remove('hidden');
-                document.getElementById('adminExclusiveButtons').classList.remove('hidden');
-                document.getElementById('adminAddProductBtnContainer').classList.remove('hidden');
-                document.getElementById('adminEditAccountsContainer').classList.remove('hidden');
+                isAdmin = false;
+                document.getElementById('adminModeBanner').classList.add('hidden');
+                document.getElementById('adminExclusiveButtons').classList.add('hidden');
                 renderProducts();
-                showToast('¡Modo Admin Activado!');
+                showToast('Sesión cerrada');
             } else {
-                showToast('Contraseña incorrecta');
+                const pwd = prompt("Contraseña de administrador:");
+                if (pwd === adminPassword) {
+                    isAdmin = true;
+                    document.getElementById('adminModeBanner').classList.remove('hidden');
+                    document.getElementById('adminExclusiveButtons').classList.remove('hidden');
+                    renderProducts();
+                    showToast('¡Modo Admin Activado!');
+                } else if (pwd !== null) {
+                    showToast('Contraseña incorrecta');
+                }
             }
-        }
-
-        function logoutAdmin() {
-            isAdmin = false;
-            document.getElementById('modalPasswordInput').value = '';
-            document.getElementById('adminModeBanner').classList.add('hidden');
-            document.getElementById('adminExclusiveButtons').classList.add('hidden');
-            document.getElementById('adminAddProductBtnContainer').classList.add('hidden');
-            document.getElementById('adminEditAccountsContainer').classList.add('hidden');
-            renderProducts();
-            showToast('Sesión cerrada');
-        }
-
-        function closeAdminAuthModal() {
-            document.getElementById('modalPasswordInput').value = '';
-            document.getElementById('authModal').classList.add('hidden');
-        }
-
-        function openChangePasswordModal() {
-            document.getElementById('newAdminPasswordInput').value = '';
-            document.getElementById('changePasswordModal').classList.remove('hidden');
-        }
-
-        function closeChangePasswordModal() {
-            document.getElementById('newAdminPasswordInput').value = '';
-            document.getElementById('changePasswordModal').classList.add('hidden');
-        }
-
-        function saveNewPassword() {
-            const newPwd = document.getElementById('newAdminPasswordInput').value.trim();
-            if (newPwd) {
-                adminPassword = newPwd;
-                localStorage.setItem('gf_admin_password', adminPassword);
-                closeChangePasswordModal();
-                showToast('¡Contraseña actualizada!');
-            }
-        }
-
-        function toggleEditLogoInput() {
-            document.getElementById('inlineEditLogoBox').classList.toggle('hidden');
-        }
-
-        function saveCustomLogoAndName() {
-            const newLogoUrl = document.getElementById('logoUrlInput').value.trim();
-            const newTitle = document.getElementById('storeTitleInput').value.trim();
-            const newSubtitle = document.getElementById('storeSubtitleInput').value.trim();
-            
-            if (newLogoUrl) document.getElementById('customLogoImage').src = newLogoUrl;
-            if (newTitle) document.getElementById('storeTitleText').innerText = newTitle;
-            if (newSubtitle) document.getElementById('storeSubtitleText').innerText = newSubtitle;
-            
-            showToast('¡Encabezado actualizado con éxito!');
-            toggleEditLogoInput();
-        }
-
-        function openShareAppModal() {
-            document.getElementById('shareAppModal').classList.remove('hidden');
-        }
-
-        function closeShareAppModal() {
-            document.getElementById('shareAppModal').classList.add('hidden');
-        }
-
-        function toggleEditShareUrl() {
-            const input = document.getElementById('shareUrlInput');
-            input.removeAttribute('readonly');
-            input.focus();
-            showToast('✏️ Ya puedes editar el enlace');
-        }
-
-        function copyShareUrl() {
-            const urlInput = document.getElementById('shareUrlInput');
-            urlInput.select();
-            navigator.clipboard.writeText(urlInput.value);
-            saveCatalogData();
-            showToast('¡Enlace copiado al portapapeles! 📋');
-        }
-
-        function downloadAppFile() {
-            const htmlContent = document.documentElement.outerHTML;
-            const blob = new Blob([htmlContent], { type: 'text/html' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'index.html';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-            showToast('📥 ¡Archivo de la app descargado con éxito!');
-        }
-
-        function openCodeModal() {
-            const fullHtml = document.documentElement.outerHTML;
-            document.getElementById('codeSnippetPre').innerText = fullHtml;
-            document.getElementById('codeModal').classList.remove('hidden');
-        }
-
-        function closeCodeModal() {
-            document.getElementById('codeModal').classList.add('hidden');
-        }
-
-        function copyCodeFromModal() {
-            const codeText = document.getElementById('codeSnippetPre').innerText;
-            navigator.clipboard.writeText(codeText).then(() => {
-                showToast('¡Código copiado al portapapeles con éxito! 💻✨');
-                closeCodeModal();
-            }).catch(() => {
-                showToast('Error al copiar el código');
-            });
-        }
-
-        function addNewProduct() {
-            PRODUCTS.push({
-                id: 'p_' + Date.now(),
-                name: 'Nueva Prenda',
-                category: 'damas',
-                tipo: 'confeccion',
-                fabric: 'Tela Premium',
-                priceDetal: 10,
-                priceMayor: 7,
-                minMayorQty: 6,
-                sizes: [{ name: 'S', quantity: 5 }, { name: 'M', quantity: 5 }],
-                colors: [{ name: 'Negro', quantity: 10 }],
-                images: ['https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600'],
-                activeImageIndex: 0
-            });
-            saveCatalogData();
-            renderProducts();
-            showToast('Prenda agregada y guardada');
-        }
-
-        function deleteProduct(id) {
-            PRODUCTS = PRODUCTS.filter(p => p.id !== id);
-            saveCatalogData();
-            renderProducts();
-            showToast('Prenda eliminada');
         }
 
         function showToast(msg) {
             const toast = document.getElementById('toast');
-            const msgEl = document.getElementById('toastMsg');
-            msgEl.innerText = msg;
+            document.getElementById('toastMsg').innerText = msg;
             toast.classList.remove('translate-y-20', 'opacity-0');
-            setTimeout(() => {
-                toast.classList.add('translate-y-20', 'opacity-0');
-            }, 3000);
+            setTimeout(() => toast.classList.add('translate-y-20', 'opacity-0'), 3000);
         }
 
         async function fetchAutoExchangeRate(showSuccess = false) {
@@ -1525,16 +526,14 @@
                 const res = await fetch('https://open.er-api.com/v6/latest/EUR');
                 if (res.ok) {
                     const data = await res.json();
-                    if (data && data.rates && data.rates.VES) {
+                    if (data?.rates?.VES) {
                         eurRate = parseFloat(data.rates.VES);
                         document.getElementById('eurRateDisplay').innerText = eurRate.toLocaleString('es-VE', { minimumFractionDigits: 2 });
-                        if (showSuccess) showToast('Tasa actualizada correctamente');
+                        if (showSuccess) showToast('Tasa actualizada');
                         renderProducts();
                     }
                 }
-            } catch (e) {
-                if (showSuccess) showToast('Error al conectar con el servidor de divisas');
-            }
+            } catch (e) {}
         }
 
         window.onload = function() {
