@@ -3193,7 +3193,7 @@
             paypal_titular: "Lenis Torres"
         };
 
-        function loadSavedData() {
+       function loadSavedData() {
             try {
                 const savedPwd = localStorage.getItem('gf_admin_password');
                 if (savedPwd) adminPassword = savedPwd;
@@ -3218,6 +3218,19 @@
             } catch (e) {
                 console.error(e);
             }
+
+            // 🔒 Forzamos siempre que el modo admin inicie cerrado por seguridad
+            isAdmin = false;
+            const banner = document.getElementById('adminModeBanner');
+            const exclusiveBtns = document.getElementById('adminExclusiveButtons');
+            const addBtnContainer = document.getElementById('adminAddProductBtnContainer');
+            const editAccContainer = document.getElementById('adminEditAccountsContainer');
+
+            if (banner) banner.classList.add('hidden');
+            if (exclusiveBtns) exclusiveBtns.classList.add('hidden');
+            if (addBtnContainer) addBtnContainer.classList.add('hidden');
+            if (editAccContainer) editAccContainer.classList.add('hidden');
+
             renderAccountsToUI();
         }
 
